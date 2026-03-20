@@ -225,7 +225,7 @@
         .faq { 
             margin: 100px 0;
             padding: 60px 50px;
-            background: #f8f9fa;
+            background: #F5F5F5;
             border-radius: 12px;
         }
         .faq h2 { 
@@ -235,25 +235,50 @@
             font-weight: 800;
         }
         .faq-item { 
-            margin-bottom: 35px;
-            padding-bottom: 35px;
-            border-bottom: 1px solid #dee2e6;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #dddddd;
         }
         .faq-item:last-child { 
             margin-bottom: 0;
-            padding-bottom: 0;
             border-bottom: none;
         }
         .faq-question { 
             font-size: 1.3rem; 
             font-weight: 700; 
-            margin-bottom: 15px;
-            color: #1a1a1a;
+            margin-bottom: 0;
+            color: #000000;
+            cursor: pointer;
+            padding: 20px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: color 0.2s;
+        }
+        .faq-question:hover {
+            color: #333333;
+        }
+        .faq-question:after {
+            content: '+';
+            font-size: 1.8rem;
+            font-weight: 400;
+            transition: transform 0.3s;
+        }
+        .faq-item.active .faq-question:after {
+            content: '−';
+            transform: rotate(0deg);
         }
         .faq-answer { 
             font-size: 1.1rem; 
-            color: #555;
+            color: #333333;
             line-height: 1.7;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+            padding: 0;
+        }
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+            padding: 0 0 20px 0;
         }
         
         /* GUARANTEE */
@@ -512,19 +537,19 @@
         <!-- SECTION 8: FAQ -->
         <section class="faq">
             <h2>有问题？我也有过。</h2>
-            <div class="faq-item">
+            <div class="faq-item" onclick="toggleFaq(this)">
                 <div class="faq-question">Q1: "我能做到吗？"</div>
                 <div class="faq-answer">A: 可以。如果 12 岁的孩子能做到，你也能。他们学得更快。你有更多经验。</div>
             </div>
-            <div class="faq-item">
+            <div class="faq-item" onclick="toggleFaq(this)">
                 <div class="faq-question">Q2: "我没有钱买工具。"</div>
                 <div class="faq-answer">A: 一切都是免费的。无需付费软件。</div>
             </div>
-            <div class="faq-item">
+            <div class="faq-item" onclick="toggleFaq(this)">
                 <div class="faq-question">Q3: "我不懂技术。"</div>
                 <div class="faq-answer">A: 无需编程。无需复杂设置。如果你会复制 + 粘贴，你就能做到。</div>
             </div>
-            <div class="faq-item">
+            <div class="faq-item" onclick="toggleFaq(this)">
                 <div class="faq-question">Q4: "如果对我没用怎么办？"</div>
                 <div class="faq-answer">A: 7 天保证。试用 7 天。如果不适合，我退款。没问题。</div>
             </div>
@@ -640,5 +665,18 @@
             <p>Powered by The 1% Club</p>
         </footer>
     </div>
+    <script>
+        function toggleFaq(element) {
+            const isActive = element.classList.contains('active');
+            // Close all FAQ items
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            // Open clicked item if it wasn't already open
+            if (!isActive) {
+                element.classList.add('active');
+            }
+        }
+    </script>
 </body>
 </html>
