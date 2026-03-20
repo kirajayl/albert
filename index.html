@@ -84,6 +84,102 @@
             line-height: 1.8;
         }
         
+        /* PROBLEM */
+        .problem { 
+            margin: 100px 0;
+            padding: 60px 50px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
+            color: #fff;
+            border-radius: 12px;
+            text-align: center;
+        }
+        .problem h2 { 
+            font-size: 2.5rem; 
+            margin-bottom: 35px;
+            font-weight: 800;
+        }
+        .problem p { 
+            font-size: 1.2rem; 
+            line-height: 1.8;
+            max-width: 600px;
+            margin: 0 auto 20px;
+            color: #ddd;
+        }
+        
+        /* TRANSFORMATION */
+        .transformation { 
+            margin: 100px 0;
+            padding: 60px 50px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            border-radius: 12px;
+        }
+        .transformation h2 { 
+            font-size: 2.5rem; 
+            margin-bottom: 35px;
+            font-weight: 800;
+            text-align: center;
+        }
+        .timeline { 
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .timeline-item { 
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            font-size: 1.15rem;
+            line-height: 1.7;
+        }
+        .timeline-item:last-child { border-bottom: none; }
+        .timeline-item strong { font-weight: 700; }
+        
+        /* HOW IT WORKS */
+        .how-it-works { 
+            margin: 100px 0;
+        }
+        .how-it-works h2 { 
+            font-size: 2.5rem; 
+            text-align: center; 
+            margin-bottom: 50px;
+            font-weight: 800;
+        }
+        .steps-grid { 
+            display: grid; 
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 40px;
+        }
+        .step { 
+            padding: 35px 30px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            border-left: 4px solid #667eea;
+        }
+        .step-number { 
+            font-size: 3rem; 
+            font-weight: 800; 
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+        .step h3 { 
+            font-size: 1.4rem; 
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        .step p { 
+            color: #555;
+            line-height: 1.7;
+        }
+        .step ul { 
+            margin-top: 15px;
+            padding-left: 20px;
+            color: #555;
+        }
+        .step ul li { 
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+        
         /* METHOD */
         .method-grid { 
             display: grid; 
@@ -125,6 +221,86 @@
         }
         .checkmark-list li:last-child { border-bottom: none; }
         
+        /* FAQ */
+        .faq { 
+            margin: 100px 0;
+            padding: 60px 50px;
+            background: #f8f9fa;
+            border-radius: 12px;
+        }
+        .faq h2 { 
+            font-size: 2.5rem; 
+            text-align: center; 
+            margin-bottom: 50px;
+            font-weight: 800;
+        }
+        .faq-item { 
+            margin-bottom: 35px;
+            padding-bottom: 35px;
+            border-bottom: 1px solid #dee2e6;
+        }
+        .faq-item:last-child { 
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        .faq-question { 
+            font-size: 1.3rem; 
+            font-weight: 700; 
+            margin-bottom: 15px;
+            color: #1a1a1a;
+        }
+        .faq-answer { 
+            font-size: 1.1rem; 
+            color: #555;
+            line-height: 1.7;
+        }
+        
+        /* GUARANTEE */
+        .guarantee { 
+            margin: 100px 0;
+            padding: 60px 50px;
+            background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
+            border-radius: 12px;
+            border: 2px solid #ffe082;
+            text-align: center;
+        }
+        .guarantee h2 { 
+            font-size: 2.5rem; 
+            margin-bottom: 25px;
+            font-weight: 800;
+        }
+        .guarantee p { 
+            font-size: 1.2rem; 
+            color: #555;
+            line-height: 1.8;
+            max-width: 600px;
+            margin: 0 auto 20px;
+        }
+        
+        /* WHY THIS WORKS */
+        .why-this-works { 
+            margin: 100px 0;
+            padding: 60px 50px;
+            background: #1a1a1a;
+            color: #fff;
+            border-radius: 12px;
+        }
+        .why-this-works h2 { 
+            font-size: 2.5rem; 
+            margin-bottom: 35px;
+            font-weight: 800;
+            text-align: center;
+        }
+        .why-this-works p { 
+            font-size: 1.2rem; 
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto 20px;
+            color: #ddd;
+            text-align: center;
+        }
+        
         /* COHORT */
         .cohort { 
             text-align: center; 
@@ -136,6 +312,8 @@
         }
         .cohort-badge { font-size: 4rem; margin-bottom: 25px; }
         .cohort h2 { font-size: 2.5rem; margin-bottom: 15px; font-weight: 800; }
+        .cohort-sub { font-size: 1.3rem; color: #666; margin-bottom: 25px; }
+        .cohort p { font-size: 1.2rem; color: #555; margin-bottom: 35px; line-height: 1.7; }
         .progress-bar { 
             width: 100%; 
             height: 35px; 
@@ -150,6 +328,7 @@
             background: linear-gradient(90deg, #28a745 0%, #20c997 100%); 
             width: 73%;
         }
+        .progress-text { font-size: 1.1rem; color: #555; margin-top: 15px; font-weight: 600; }
         
         /* PRICING */
         .pricing-card { 
@@ -161,6 +340,12 @@
             text-align: center;
             background: #fff;
             box-shadow: 0 4px 20px rgba(102, 126, 234, 0.15);
+        }
+        .pricing-card h3 { 
+            font-size: 1.8rem; 
+            margin-bottom: 25px;
+            font-weight: 800;
+            color: #1a1a1a;
         }
         .price { 
             font-size: 3.5rem; 
@@ -179,10 +364,24 @@
             color: #666;
         }
         
+        /* FOOTER */
+        .footer { 
+            text-align: center; 
+            padding: 50px 20px; 
+            color: #999;
+            font-size: 0.9rem;
+            border-top: 1px solid #e0e0e0;
+            margin-top: 80px;
+        }
+        
         /* MOBILE */
         @media (max-width: 768px) { 
             .story { grid-template-columns: 1fr; } 
+            .steps-grid { grid-template-columns: 1fr; }
             .method-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2rem; }
+            .cta-button { padding: 15px 35px; font-size: 1.1rem; }
+            .problem, .transformation, .faq, .guarantee, .why-this-works { padding: 40px 25px; }
         }
     </style>
 </head>
@@ -198,7 +397,15 @@
             <a href="https://nas.io/theonepercentbetterprogram/digital-files/the-1-better-program?affiliateCode=ALBERT_NR5T" class="cta-button">→ 开始学习</a>
         </section>
 
-        <!-- SECTION 2: ALBERT'S STORY -->
+        <!-- SECTION 2: PROBLEM AGITATION -->
+        <section class="problem">
+            <h2>我曾用时间换钱。每天 12 小时。没有出路。</h2>
+            <p>每天，我坐在编辑桌前。<br>12 小时。背痛。眼睛灼热。<br>我只够生存。</p>
+            <p>我看着别人规模扩大。<br>我困在原地。</p>
+            <p>我知道一定有更好的方法。<br>但我不知道是什么。</p>
+        </section>
+
+        <!-- SECTION 3: ALBERT'S STORY -->
         <section class="story">
             <div>
                 <h2>6 个月前，我不知道什么是 AI</h2>
@@ -207,26 +414,69 @@
             <img src="albert-photo.jpg" alt="Albert">
         </section>
 
-        <!-- SECTION 3: THE METHOD -->
-        <section class="method-grid">
-            <div class="method-item">
-                <div class="method-icon">🧠</div>
-                <h3>简单</h3>
-                <p>无需编程</p>
-            </div>
-            <div class="method-item">
-                <div class="method-icon">💰</div>
-                <h3>美元</h3>
-                <p>全球报酬</p>
-            </div>
-            <div class="method-item">
-                <div class="method-icon">⚡️</div>
-                <h3>快速</h3>
-                <p>6 小时学习</p>
+        <!-- SECTION 4: TRANSFORMATION -->
+        <section class="transformation">
+            <h2>然后 AI 改变了一切。</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <strong>第 1 周：</strong>我用 AI 赚了第一笔 X 美元。
+                </div>
+                <div class="timeline-item">
+                    <strong>第 4 周：</strong>我工作 4 小时，不是 12 小时。
+                </div>
+                <div class="timeline-item">
+                    <strong>第 3 个月：</strong>青少年用 MY 方法赚钱。
+                </div>
+                <div class="timeline-item">
+                    <strong>第 6 个月：</strong>美元收入。全球客户。自由。
+                </div>
+                <div class="timeline-item">
+                    这不是理论。<br>这是我的人生。
+                </div>
             </div>
         </section>
 
-        <!-- SECTION 4: WHO IT'S FOR -->
+        <!-- SECTION 5: HOW IT WORKS -->
+        <section class="how-it-works">
+            <h2>4 步骤。6 小时。你的第一笔美元。</h2>
+            <div class="steps-grid">
+                <div class="step">
+                    <div class="step-number">步骤 1</div>
+                    <h3>学习提示框架</h3>
+                    <p>复制我的确切提示（我用了 6 个月）</p>
+                    <ul>
+                        <li>无需编程。无需术语。只需粘贴 + 编辑。</li>
+                    </ul>
+                </div>
+                <div class="step">
+                    <div class="step-number">步骤 2</div>
+                    <h3>选择你的利基</h3>
+                    <p>12+ 选项（游戏、艺术、写作、社交媒体等）</p>
+                    <ul>
+                        <li>选择你每天已经做的事情。</li>
+                    </ul>
+                </div>
+                <div class="step">
+                    <div class="step-number">步骤 3</div>
+                    <h3>6 小时内发布</h3>
+                    <p>遵循我的清单。</p>
+                    <ul>
+                        <li>设置你的个人资料。</li>
+                        <li>上线。</li>
+                    </ul>
+                </div>
+                <div class="step">
+                    <div class="step-number">步骤 4</div>
+                    <h3>赚美元</h3>
+                    <p>提取到你的本地银行。</p>
+                    <ul>
+                        <li>全球客户。全球报酬。</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6: WHO IT'S FOR -->
         <section class="checkmarks">
             <ul class="checkmark-list">
                 <li>12 岁以上</li>
@@ -235,22 +485,60 @@
                 <li>每天 30 分钟</li>
                 <li>赚美元收入</li>
             </ul>
-            <p class="checkmarks-footer">给愿意出现的人。</p>
         </section>
 
-        <!-- SECTION 5: FOUNDING COHORT -->
+        <!-- SECTION 7: FAQ -->
+        <section class="faq">
+            <h2>有问题？我也有过。</h2>
+            <div class="faq-item">
+                <div class="faq-question">Q1: "我 13 岁。我能做吗？"</div>
+                <div class="faq-answer">A: 可以。70% 的学生是 12-17 岁。他们比成年人学得更快。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Q2: "我没有钱买工具。"</div>
+                <div class="faq-answer">A: 一切都是免费的。无需付费软件。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Q3: "我不懂技术。"</div>
+                <div class="faq-answer">A: 无需编程。无需复杂设置。如果你会复制 + 粘贴，你就能做到。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Q4: "如果对我没用怎么办？"</div>
+                <div class="faq-answer">A: 72 小时保证。试用。如果不适合，我退款。没问题。</div>
+            </div>
+        </section>
+
+        <!-- SECTION 8: GUARANTEE -->
+        <section class="guarantee">
+            <h2>72 小时保证。</h2>
+            <p>试用方法 3 天。<br>如果不适合你，我退款。<br>没问题。不难过。</p>
+            <p>我通过挣扎创造了这个。<br>我不会让你独自挣扎。</p>
+        </section>
+
+        <!-- SECTION 9: WHY THIS WORKS -->
+        <section class="why-this-works">
+            <h2>为什么这个方法有效。</h2>
+            <p>6 个月的真实测试（不是理论）。</p>
+            <p>100+ 学生使用了这个。</p>
+            <p>由 1% Club 基础设施支持。</p>
+            <p>我们没有读课程。<br>我们经历了挣扎。<br>每课都是实战测试。</p>
+        </section>
+
+        <!-- SECTION 10: FOUNDING COHORT -->
         <section class="cohort">
             <div class="cohort-badge">🏅</div>
             <h2>创始 cohort</h2>
-            <p>仅限 100 名学生</p>
+            <p class="cohort-sub">仅限 100 名学生</p>
             <p>成为先锋。不是数字。<br>在规模扩大之前加入。</p>
+            <p>这是你在地面层面进入的机会。<br>当方法扩展时，你会说：<br>"我在那里。我是前 100 名。"</p>
             <div class="progress-bar">
                 <div class="progress-fill"></div>
             </div>
+            <p class="progress-text">73/100 名额已占</p>
             <a href="https://nas.io/theonepercentbetterprogram/digital-files/the-1-better-program?affiliateCode=ALBERT_NR5T" class="cta-button">→ 预留你的名额</a>
         </section>
 
-        <!-- SECTION 6: FINAL CTA -->
+        <!-- SECTION 11: FINAL CTA -->
         <section id="pricing" class="pricing-card">
             <h3>AI Blueprint Method</h3>
             <div class="price">9.90 美元</div>
@@ -267,7 +555,7 @@
             </div>
         </section>
 
-        <!-- FOOTER -->
+        <!-- SECTION 12: FOOTER -->
         <footer class="footer">
             <p>© 2026 AI Blueprint. All rights reserved.</p>
             <p>Powered by The 1% Club</p>
