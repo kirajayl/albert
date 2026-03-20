@@ -407,12 +407,66 @@
             .cta-button { padding: 15px 35px; font-size: 1.1rem; }
             .problem, .transformation, .faq, .guarantee, .why-this-works { padding: 40px 25px; }
         }
+        
+        /* SCROLL ANIMATIONS */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transition: opacity 0.8s ease-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+        }
+        
+        .slide-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .slide-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .slide-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .slide-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .scale-in {
+            opacity: 0;
+            transform: scale(0.9);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .scale-in.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+        
+        /* Stagger delays for grid items */
+        .step:nth-child(1) { transition-delay: 0.1s; }
+        .step:nth-child(2) { transition-delay: 0.2s; }
+        .step:nth-child(3) { transition-delay: 0.3s; }
     </style>
 </head>
 <body>
     <div class="container">
         <!-- SECTION 1: HERO -->
-        <section class="hero">
+        <section class="hero fade-up">
             <h1>从编辑 → 用 AI 赚钱</h1>
             <p>6 个月前，我不知道什么是 AI。<br>现在，连 12 岁的孩子都能用它赚美元。</p>
             <p style="font-size: 1rem; color: #666666; margin: 15px 0;">由 Nas Daily AI 技术支持</p>
@@ -421,7 +475,7 @@
         </section>
 
         <!-- SECTION 2: VIDEO -->
-        <section class="hero" style="padding-top: 40px;">
+        <section class="hero fade-up" style="padding-top: 40px;">
             <p style="margin-bottom: 20px; color: #333333; font-size: 1.1rem;">听 Albert 亲口讲述他的故事</p>
             <div class="video-container">
                 <iframe src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
@@ -430,7 +484,7 @@
         </section>
 
         <!-- SECTION 2A: POWERED BY NAS DAILY -->
-        <section class="why-this-works" style="background: #F5F5F5; color: #000000;">
+        <section class="why-this-works fade-up" style="background: #F5F5F5; color: #000000;">
             <h2 style="color: #000000;">$1000 万美元的 AI。你以 $9.90 获得。</h2>
             <p style="font-size: 1.2rem; margin-bottom: 30px; color: #000000;">Nas Daily 投资 1000 万美元于 AI 基础设施。<br>现在，任何人（12 岁+）都能使用相同技术。</p>
             <p style="margin-bottom: 35px; color: #000000;">这不是小工具。<br>这是价值 1000 万美元的 AI 引擎。<br>简化给任何人使用。</p>
@@ -460,7 +514,7 @@
         </section>
 
         <!-- SECTION 3: PROBLEM AGITATION -->
-        <section class="problem">
+        <section class="problem fade-up">
             <h2>我曾用时间换钱。每天 12 小时。没有出路。</h2>
             <p>每天，我坐在编辑桌前。<br>12 小时。背痛。眼睛灼热。<br>我只够生存。</p>
             <p>我看着别人规模扩大。<br>我困在原地。</p>
@@ -468,7 +522,7 @@
         </section>
 
         <!-- SECTION 4: TRANSFORMATION -->
-        <section class="transformation">
+        <section class="transformation fade-up">
             <h2>然后 AI 改变了一切。</h2>
             <div class="timeline">
                 <div class="timeline-item">
@@ -487,7 +541,7 @@
         </section>
 
         <!-- SECTION 5: ABOUT ALBERT -->
-        <section class="story">
+        <section class="story slide-left">
             <div>
                 <h2>关于 Albert</h2>
                 <p>我是视频编辑师。<br>2 年经验。<br>服务过各种客户。<br>平台：YouTube, TikTok, Instagram, 企业宣传片。</p>
@@ -501,7 +555,7 @@
         </section>
 
         <!-- SECTION 6: HOW IT WORKS (3 STEPS) -->
-        <section class="how-it-works">
+        <section class="how-it-works fade-up">
             <h2>3 步骤。开始赚美元。</h2>
             <div class="steps-grid">
                 <div class="step">
@@ -523,7 +577,7 @@
         </section>
 
         <!-- SECTION 7: WHO IT'S FOR -->
-        <section class="checkmarks">
+        <section class="checkmarks scale-in">
             <ul class="checkmark-list">
                 <li>12 岁以上</li>
                 <li>无需技术技能</li>
@@ -535,7 +589,7 @@
         </section>
 
         <!-- SECTION 8: FAQ -->
-        <section class="faq">
+        <section class="faq fade-up">
             <h2>有问题？我也有过。</h2>
             <div class="faq-item" onclick="toggleFaq(this)">
                 <div class="faq-question">Q1: "我能做到吗？"</div>
@@ -556,7 +610,7 @@
         </section>
 
         <!-- SECTION 9: GUARANTEE (7 DAYS) -->
-        <section class="guarantee">
+        <section class="guarantee scale-in">
             <h2>7 天保证。</h2>
             <p>试用方法 7 天。<br>如果不适合你，我退款。<br>没问题。不难过。</p>
             <p>我通过挣扎创造了这个。<br>我不会让你独自挣扎。</p>
@@ -564,7 +618,7 @@
         </section>
 
         <!-- SECTION 10: WHY THIS WORKS (NAS DAILY SPECIFIC) -->
-        <section class="why-this-works">
+        <section class="why-this-works fade-up">
             <h2>为什么这个方法有效。</h2>
             <p>6 个月的真实测试（不是理论）。</p>
             <p>由 Nas Daily AI ($10M 技术) 支持。</p>
@@ -574,7 +628,7 @@
         </section>
 
         <!-- SECTION 11: BONUSES -->
-        <section class="checkmarks" style="background: #FFFFFF; border: 2px solid #dddddd;">
+        <section class="checkmarks fade-up" style="background: #FFFFFF; border: 2px solid #dddddd;">
             <h2 style="text-align: center; margin-bottom: 40px; font-size: 2.2rem; color: #000000;">今天加入，获得 3 个免费赠品。</h2>
             <ul class="checkmark-list" style="max-width: 500px;">
                 <li><strong>Bonus #1:</strong> 我的提示库<br><span style="font-size: 0.95rem; color: #666666;">复制我用了 6 个月的提示。12+ 场景。直接粘贴。</span></li>
@@ -584,7 +638,7 @@
         </section>
 
         <!-- SECTION 12: PRICE ANCHORING -->
-        <section class="faq" style="background: #FFFFFF; border: 2px solid #dddddd;">
+        <section class="faq fade-in" style="background: #FFFFFF; border: 2px solid #dddddd;">
             <h2 style="text-align: center;">为什么只要 $9.90？</h2>
             <div style="max-width: 600px; margin: 0 auto; overflow-x: auto;">
                 <table style="width: 100%; border-collapse: collapse; margin-top: 30px;">
@@ -622,7 +676,7 @@
         </section>
 
         <!-- SECTION 13: FOUNDING COHORT -->
-        <section class="cohort">
+        <section class="cohort scale-in">
             <div class="cohort-badge">🏅</div>
             <h2>创始 cohort</h2>
             <p class="cohort-sub">仅限 100 名学生</p>
@@ -637,7 +691,7 @@
         </section>
 
         <!-- SECTION 14: PRICING CARD (NAS DAILY BADGE) -->
-        <section id="pricing" class="pricing-card">
+        <section id="pricing" class="pricing-card fade-up">
             <h3>AI Blueprint Method</h3>
             <div class="price">9.90 美元</div>
             <ul class="features">
@@ -677,6 +731,29 @@
                 element.classList.add('active');
             }
         }
+        
+        // Scroll Animation Observer
+        document.addEventListener('DOMContentLoaded', function() {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+            
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target); // Only animate once
+                    }
+                });
+            }, observerOptions);
+            
+            // Observe all animated elements
+            document.querySelectorAll('.fade-up, .fade-in, .slide-left, .slide-right, .scale-in').forEach(el => {
+                observer.observe(el);
+            });
+        });
     </script>
 </body>
 </html>
