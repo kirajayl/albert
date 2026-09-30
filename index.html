@@ -302,20 +302,19 @@ em{font-style:italic}
 .case-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:14px;margin-bottom:28px}
 .case-head .label{color:var(--dim)}
 .case-head .proj{font-family:var(--display);font-size:1.15rem}
-.case-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(12px,2vw,22px)}
-.case-cell figure{position:relative;aspect-ratio:16/10;overflow:hidden;background:var(--surface)}
-.case-cell img{width:100%;height:100%;object-fit:cover}
-.case-cell .ph{
-  position:absolute;inset:0;border:1px dashed var(--rule-2);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;
-  text-align:center;padding:14px;
+.case-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(18px,2.6vw,34px)}
+.case-cell figure{
+  position:relative;aspect-ratio:16/10;overflow:hidden;
+  background:#0B0A09;border:1px solid var(--rule);
+  transition:border-color .4s var(--ease);
 }
-.case-cell .ph b{font-family:var(--display);font-size:.95rem;color:var(--dim);font-weight:400}
-.case-cell .ph em{font-style:normal;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--dimmer)}
+.case-cell figure:hover{border-color:var(--rule-2)}
+/* contain, not cover: cropping a UI screenshot destroys the evidence */
+.case-cell img{width:100%;height:100%;object-fit:contain}
 .case-cell .st{display:flex;gap:10px;align-items:baseline;margin-top:13px;padding-top:11px;border-top:1px solid var(--rule)}
 .case-cell .st .n{font-family:var(--display);font-size:.78rem;color:var(--dimmer)}
 .case-cell .st .x{font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);font-weight:500}
-.case-cell p{font-size:.82rem;color:var(--dim);line-height:1.6;margin-top:8px}
+.case-cell p{font-size:.86rem;color:var(--dim);line-height:1.66;margin-top:10px;max-width:46ch}
 
 /* ===== FAQ ===== */
 .faq{border-top:1px solid var(--rule)}
@@ -365,7 +364,7 @@ footer{border-top:1px solid var(--rule);padding:32px 0}
 }
 .lightbox[hidden]{display:none}
 .lightbox.show{opacity:1}
-.lightbox img{max-width:100%;max-height:90vh;object-fit:contain}
+.lightbox img{max-width:100%;max-height:90vh;width:auto;height:auto;object-fit:contain}
 .lb-close{
   position:absolute;top:22px;right:26px;width:44px;height:44px;
   border:1px solid var(--rule-2);color:var(--bone);font-size:1.3rem;line-height:1;
@@ -389,7 +388,6 @@ footer{border-top:1px solid var(--rule);padding:32px 0}
   .step p{grid-column:2}
   .about{grid-template-columns:1fr;gap:34px;align-items:start}
   .about-photo{max-width:320px;aspect-ratio:1/1}
-  .case-grid{grid-template-columns:repeat(2,1fr)}
   .quote{grid-template-columns:1fr;gap:40px}
 }
 @media (max-width:760px){
@@ -668,16 +666,30 @@ const CONFIG = {
   // "auto" shows the category tabs once there are 9+ pieces; true/false force it.
   showTabs: "auto",
 
-  // ▸ NEEDS 4 STILLS FROM ALBERT. Set `src` to a filename in this folder
-  //   (e.g. "case-01-board.jpg") and the dashed placeholder is replaced.
-  //   `project` names which film is being walked through.
+  // Working screenshots. `note` says what the frame demonstrates.
+  // Platform branding is deliberately cropped/blurred out of these images.
   caseStudy: {
-    project: { cn: "Echo 7", en: "Echo 7" },
     stills: [
-      { src: null, stage: { cn: "简报", en: "The brief" } },
-      { src: null, stage: { cn: "分镜", en: "Storyboard" } },
-      { src: null, stage: { cn: "原始生成", en: "Raw generation" } },
-      { src: null, stage: { cn: "成片调色", en: "Final grade" } }
+      { src: "case-01-script.jpg",
+        stage: { cn: "故事与剧本", en: "Story & script" },
+        note: {
+          cn: "《等一班不会来的车》的剧本开发——人物、场次与方言语感，全部在生成任何画面之前定稿。",
+          en: "Developing the screenplay for Waiting For The Bus That Never Comes — characters, scene beats and dialect notes, all settled before a single frame is generated." } },
+      { src: "case-02-shots.jpg",
+        stage: { cn: "分镜与参考", en: "Shot direction" },
+        note: {
+          cn: "每个镜头都对照锁定的参考画面生成，构图、运镜与对白方言逐条指定。",
+          en: "Every shot is generated against a locked reference frame, with framing, camera behaviour and spoken dialect specified clip by clip." } },
+      { src: "case-03-prompt.jpg",
+        stage: { cn: "提示词工程", en: "Prompt engineering" },
+        note: {
+          cn: "正向提示词描述画面；而真正让成片不「像 AI」的，是那一长串负向提示词：肢体扭曲、面部变形、步态失真、背景融化。",
+          en: "The positive prompt describes the shot. The negative prompt — warping limbs, face morphing, unnatural gait, melting background — is what keeps it from looking generated." } },
+      { src: "case-04-character.jpg",
+        stage: { cn: "人物一致性", en: "Character consistency" },
+        note: {
+          cn: "用人物参考图锁定同一张脸，贯穿全片每一个镜头——这是「一段影片」与「一堆素材」的区别。",
+          en: "A character reference sheet holds the same face across every shot in the film — the detail that separates a sequence from a pile of clips." } }
     ]
   }
 };
@@ -733,8 +745,8 @@ const I18N = {
     slot_label:"影片位", slot_hint:"待上传",
     faq_eyebrow:"常见问题", faq_h2:"版权、授权<em>与合作细节。</em>",
     faq_lede:"企业客户最常问的六个问题。若你的情况不在其中，直接问我。",
-    case_label:"流程实例", case_note:"以下为单一项目从简报到成片的完整过程。",
-    case_stage:"阶段", case_ph:"待补图",
+    case_label:"流程实例", case_note:"近期项目的实际工作截图。来自不同项目，对应同一条流程的四个阶段。",
+    case_ph:"待补图",
     faq:[
       {q:"成片的版权归谁？",
        a:"归你。尾款结清后，影片的完整所有权与商业使用权即转移给你，包括付费广告、电视播放与社群平台，没有年限限制，也没有二次授权费用。"},
@@ -796,8 +808,8 @@ const I18N = {
     slot_label:"Video slot", slot_hint:"To be added",
     faq_eyebrow:"Questions", faq_h2:"Ownership, usage<em> and the fine print.</em>",
     faq_lede:"The six things corporate clients ask before commissioning. If yours isn’t here, just ask.",
-    case_label:"Process in practice", case_note:"One project, brief to final frame.",
-    case_stage:"Stage", case_ph:"Still to come",
+    case_label:"Process in practice", case_note:"Working screenshots from recent productions. Different projects, four stages of one pipeline.",
+    case_ph:"Still to come",
     faq:[
       {q:"Who owns the finished video?",
        a:"You do. On final payment, full ownership and unlimited commercial usage rights transfer to you — paid advertising, broadcast and social included. No term limit, no recurring licence fee."},
@@ -963,24 +975,39 @@ function filterWork(){
 function renderCase(){
   const box = document.getElementById('case');
   const cs = CONFIG.caseStudy;
-  if (!box || !cs){ return; }
+  if (!box || !cs) return;
   box.innerHTML =
     '<div class="case-head">'
       + '<span class="label">' + t('case_label') + '</span>'
-      + '<span class="proj">' + cs.project[lang] + '</span>'
-      + '<span class="label" style="flex:1 1 100%">' + t('case_note') + '</span>'
+      + '<span class="label" style="flex:1 1 100%;color:var(--dim)">' + t('case_note') + '</span>'
     + '</div>';
+
   const grid = document.createElement('div');
   grid.className = 'case-grid';
+
   cs.stills.forEach((st, i) => {
     const n = String(i + 1).padStart(2, '0');
     const cell = document.createElement('div');
     cell.className = 'case-cell';
-    const inner = st.src
-      ? '<img src="' + st.src + '" alt="' + st.stage[lang] + '" loading="lazy">'
-      : '<div class="ph"><b>' + st.stage[lang] + '</b><em>' + t('case_ph') + '</em></div>';
-    cell.innerHTML = '<figure>' + inner + '</figure>'
-      + '<div class="st"><span class="n">' + n + '</span><span class="x">' + st.stage[lang] + '</span></div>';
+
+    const fig = document.createElement('figure');
+    if (st.src){
+      fig.innerHTML = '<img src="' + st.src + '" alt="' + st.stage[lang] + '" loading="lazy">';
+    } else {
+      fig.innerHTML = '<div class="ph"><b>' + st.stage[lang] + '</b><em>' + t('case_ph') + '</em></div>';
+    }
+    cell.appendChild(fig);
+
+    const meta = document.createElement('div');
+    meta.className = 'st';
+    meta.innerHTML = '<span class="n">' + n + '</span><span class="x">' + st.stage[lang] + '</span>';
+    cell.appendChild(meta);
+
+    if (st.note){
+      const pEl = document.createElement('p');
+      pEl.textContent = st.note[lang];
+      cell.appendChild(pEl);
+    }
     grid.appendChild(cell);
   });
   box.appendChild(grid);

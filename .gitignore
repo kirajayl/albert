@@ -15,3 +15,9 @@ video-translation.mp4
 
 # local working artifact, not part of the site
 _backup_v1_dark_gold.html
+
+# uncropped original (exposes internal project list) — keep local only
+_case-raw-01.jpeg
+
+# pre-treatment case study sources — local only
+_case-src/
