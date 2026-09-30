@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Albert — AI Film Production</title>
+<meta name="description" content="Award-winning AI film production. Concept, photorealistic generation, original score and final edit — end to end.">
+<meta property="og:title" content="Albert — AI Film Production">
+<meta property="og:description" content="1st & 2nd Place, MMEETT “Meet The Future” AI Film Competition 2026. Concept, generation, original score and final edit — end to end.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Albert">
+<!-- Absolute URLs required for WhatsApp/LinkedIn previews. Update if the domain changes. -->
+<meta property="og:url" content="https://albertyongg.the1percentclub.net/">
+<meta property="og:image" content="https://albertyongg.the1percentclub.net/og-card.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Albert — AI film production">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2312110F'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='40' fill='%23EDE8DF' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#12110F">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://i.ytimg.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&family=Noto+Sans+SC:wght@300;400;500&family=Noto+Serif+SC:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   DARK EDITORIAL — warm near-black ground, serif display,
+   asymmetric grid, hairline rules, no accent colour.
+   ============================================================ */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+img,video{display:block;max-width:100%}
+button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+
+:root{
+  --ink:#12110F;
+  --ink-2:#171512;
+  --surface:#1C1917;
+  --bone:#EDE8DF;
+  --dim:#9A9287;
+  --dimmer:#6B6459;
+  --rule:#2B2722;
+  --rule-2:#3D3831;
+  --display:'Instrument Serif','Noto Serif SC',Georgia,'Songti SC',serif;
+  --body:'Inter','Noto Sans SC',-apple-system,BlinkMacSystemFont,sans-serif;
+  --maxw:1240px;
+  --gut:clamp(20px,4vw,56px);
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--body);
+  background:var(--ink);
+  color:var(--bone);
+  line-height:1.6;
+  font-weight:300;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--gut)}
+
+/* ===== TYPE ===== */
+.display{font-family:var(--display);font-weight:400;letter-spacing:-.015em;line-height:1.04}
+h1{font-family:var(--display);font-weight:400;letter-spacing:-.02em;line-height:.98}
+h2{font-family:var(--display);font-weight:400;letter-spacing:-.015em;line-height:1.06}
+h3{font-family:var(--display);font-weight:400;letter-spacing:-.01em;line-height:1.2}
+em{font-style:italic}
+.label{
+  font-family:var(--body);font-size:.68rem;font-weight:500;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--dimmer);
+}
+.lede{font-size:clamp(.98rem,1.4vw,1.1rem);color:var(--dim);max-width:54ch;font-weight:300;line-height:1.7}
+
+/* ===== NAV ===== */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:900;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:20px var(--gut);
+  border-bottom:1px solid transparent;
+  transition:background .5s var(--ease),border-color .5s var(--ease),padding .5s var(--ease);
+}
+.nav.solid{
+  background:rgba(18,17,15,.88);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-bottom-color:var(--rule);
+  padding:14px var(--gut);
+}
+.brand{font-size:.78rem;font-weight:500;letter-spacing:.28em;text-transform:uppercase}
+.nav-right{display:flex;align-items:center;gap:clamp(16px,3vw,34px)}
+.nav-links{display:flex;gap:clamp(16px,2.4vw,30px)}
+.nav-links a{font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);font-weight:400;transition:color .3s}
+.nav-links a:hover{color:var(--bone)}
+.lang{display:flex;gap:2px;align-items:center}
+.lang button{
+  padding:4px 9px;font-size:.72rem;font-weight:500;letter-spacing:.08em;
+  color:var(--dimmer);transition:color .3s;
+}
+.lang button.on{color:var(--bone)}
+.lang button:not(.on):hover{color:var(--dim)}
+.lang .sep{color:var(--rule-2);font-size:.72rem}
+
+/* ===== BUTTONS ===== */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  padding:16px 30px;font-size:.82rem;font-weight:500;letter-spacing:.09em;
+  text-transform:uppercase;font-family:var(--body);
+  transition:background .4s var(--ease),color .4s var(--ease),border-color .4s var(--ease),transform .4s var(--ease);
+}
+.btn svg{width:16px;height:16px;flex-shrink:0}
+.btn-solid{background:var(--bone);color:var(--ink)}
+.btn-solid:hover{transform:translateY(-2px);background:#fff}
+.btn-line{border:1px solid var(--rule-2);color:var(--bone)}
+.btn-line:hover{border-color:var(--dim);background:rgba(237,232,223,.05);transform:translateY(-2px)}
+
+/* ===== HERO ===== */
+.hero{
+  position:relative;min-height:100svh;
+  display:flex;flex-direction:column;justify-content:flex-end;
+  padding:150px 0 0;overflow:hidden;
+}
+.hero-bg{position:absolute;inset:0;z-index:0;background:var(--ink)}
+.hero-bg video{
+  width:100%;height:100%;object-fit:cover;object-position:center 35%;
+  opacity:.38;filter:saturate(.62) contrast(1.06);
+}
+.hero-bg::after{
+  content:"";position:absolute;inset:0;
+  background:
+    /* left-weighted wash: keeps the headline column clean */
+    linear-gradient(100deg,rgba(18,17,15,.93) 0%,rgba(18,17,15,.78) 32%,rgba(18,17,15,.42) 62%,rgba(18,17,15,.5) 100%),
+    /* floor the base so type never sits on a bright frame */
+    linear-gradient(180deg,rgba(18,17,15,.55) 0%,rgba(18,17,15,.35) 42%,rgba(18,17,15,.88) 82%,var(--ink) 100%);
+}
+.hero .wrap{position:relative;z-index:2;width:100%}
+.hero-inner{padding-bottom:clamp(48px,7vw,84px)}
+.hero-eyebrow{display:flex;align-items:center;gap:16px;margin-bottom:clamp(26px,4vw,40px)}
+.hero-eyebrow .rule{flex:0 0 46px;height:1px;background:var(--rule-2)}
+.hero-eyebrow .label{color:var(--dim)}
+.hero h1{
+  font-size:clamp(2.7rem,7.6vw,6rem);
+  max-width:15ch;margin-bottom:clamp(22px,3vw,32px);
+}
+.hero h1 em{font-style:italic;color:var(--dim)}
+.hero-sub{max-width:46ch;color:var(--dim);font-size:clamp(.98rem,1.5vw,1.14rem);line-height:1.7;margin-bottom:clamp(32px,4.5vw,46px)}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px}
+/* bottom index strip */
+.hero-index{
+  position:relative;z-index:2;
+  border-top:1px solid var(--rule);
+  display:grid;grid-template-columns:repeat(3,1fr);
+}
+.hero-index > div{padding:26px 0 30px;border-left:1px solid var(--rule);padding-left:clamp(16px,2.4vw,30px)}
+.hero-index > div:first-child{border-left:none;padding-left:0}
+.hero-index .v{font-family:var(--display);font-size:clamp(1.3rem,2.4vw,1.9rem);line-height:1.1;margin-bottom:8px}
+.hero-index .k{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--dimmer);font-weight:500}
+
+/* ===== SECTION SHELL ===== */
+.sec{padding:clamp(76px,10vw,140px) 0;border-top:1px solid var(--rule)}
+.sec-alt{background:var(--ink-2)}
+.sec-head{
+  display:grid;grid-template-columns:minmax(0,3fr) minmax(0,8fr);
+  gap:clamp(20px,4vw,56px);margin-bottom:clamp(44px,6vw,80px);
+}
+.sec-head .idx{display:flex;gap:12px;align-items:baseline}
+.sec-head .idx .no{font-family:var(--display);font-size:1rem;color:var(--dimmer)}
+.sec-head h2{font-size:clamp(1.9rem,4.4vw,3.3rem);margin-bottom:20px;max-width:18ch}
+.sec-head h2 em{font-style:italic;color:var(--dim)}
+
+/* ===== VIDEO CARD ===== */
+.vid{
+  position:relative;height:var(--card-h,380px);aspect-ratio:16/9;
+  overflow:hidden;background:var(--surface);
+  cursor:pointer;transition:transform .5s var(--ease);
+}
+.vid.portrait{aspect-ratio:9/16}
+.vid img{
+  width:100%;height:100%;object-fit:cover;
+  /* unified grid: partial desaturation, blooms to full colour */
+  filter:saturate(.42) contrast(1.03) brightness(.93);
+  transition:filter .7s var(--ease),transform 1s var(--ease);
+}
+.vid::after{  /* warm wash that lifts on reveal */
+  content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
+  background:rgba(58,42,22,.30);mix-blend-mode:color;
+  transition:opacity .7s var(--ease);
+}
+@media (hover:hover){
+  .vid:hover img{filter:none;transform:scale(1.035)}
+  .vid:hover::after{opacity:0}
+}
+.vid.lit img{filter:none}          /* touch devices: reveal on scroll */
+.vid.lit::after{opacity:0}
+.vid.nofilter img{filter:none}     /* award films: never muted */
+.vid.nofilter::after{opacity:0}
+.vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:5}
+.vid .play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:3}
+.vid .play i{
+  width:62px;height:62px;border-radius:50%;
+  border:1px solid rgba(237,232,223,.45);
+  background:rgba(18,17,15,.3);
+  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+  display:flex;align-items:center;justify-content:center;
+  transition:background .4s var(--ease),border-color .4s var(--ease),transform .4s var(--ease);
+}
+.vid:hover .play i{background:var(--bone);border-color:var(--bone);transform:scale(1.06)}
+.vid .play svg{width:17px;height:17px;fill:var(--bone);margin-left:3px;transition:fill .4s}
+.vid:hover .play svg{fill:var(--ink)}
+.place-tag{
+  position:absolute;top:0;left:0;z-index:4;
+  padding:9px 15px;background:var(--bone);color:var(--ink);
+  font-size:.66rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+}
+/* empty slot */
+.vid.empty{cursor:default;border:1px dashed var(--rule-2);background:transparent}
+.vid.empty::after{opacity:0}
+.vid.empty .slot{
+  position:absolute;inset:0;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:10px;text-align:center;padding:20px;
+}
+.vid.empty .slot svg{width:24px;height:24px;stroke:var(--dimmer);fill:none;stroke-width:1.4}
+.vid.empty .slot b{font-size:.84rem;font-weight:400;color:var(--dim);font-family:var(--display)}
+.vid.empty .slot em{font-style:normal;font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--dimmer)}
+
+/* ===== CAPTIONS ===== */
+.cap{width:0;min-width:100%;margin-top:16px;padding-top:15px;border-top:1px solid var(--rule)}
+.cap h3{font-size:1.15rem;margin-bottom:8px}
+.cap .line{font-size:.86rem;color:var(--dim);line-height:1.6;font-weight:300}
+.cap .meta{
+  display:block;margin-top:12px;font-size:.66rem;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--dimmer);font-weight:500;
+}
+.cert-link{
+  display:inline-flex;align-items:center;gap:7px;margin-top:12px;
+  font-size:.68rem;letter-spacing:.13em;text-transform:uppercase;color:var(--dim);
+  border-bottom:1px solid var(--rule-2);padding-bottom:3px;transition:color .3s,border-color .3s;
+}
+.cert-link:hover{color:var(--bone);border-color:var(--dim)}
+.cert-link svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:1.6}
+
+/* ===== GRIDS (mixed orientation, height-matched) ===== */
+.award-grid{display:flex;flex-wrap:wrap;align-items:flex-start;gap:clamp(18px,2.6vw,34px);--card-h:440px}
+.work-grid{display:flex;flex-wrap:wrap;align-items:flex-start;gap:clamp(18px,2.6vw,34px);--card-h:400px}
+.work-item{display:flex;flex-direction:column;transition:opacity .4s var(--ease)}
+.work-item.hide{display:none}
+
+/* ===== TABS ===== */
+.tabs{display:flex;flex-wrap:wrap;gap:26px;margin-bottom:44px;border-bottom:1px solid var(--rule);padding-bottom:18px}
+.tab{
+  font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;
+  color:var(--dimmer);padding-bottom:4px;border-bottom:1px solid transparent;transition:color .3s,border-color .3s;
+}
+.tab:hover{color:var(--dim)}
+.tab.on{color:var(--bone);border-bottom-color:var(--bone)}
+
+/* ===== PROCESS (editorial index rows) ===== */
+.steps{border-top:1px solid var(--rule)}
+.step{
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,3.4fr) minmax(0,6fr);
+  gap:clamp(16px,3vw,44px);
+  padding:clamp(26px,3.4vw,40px) 0;border-bottom:1px solid var(--rule);
+  transition:opacity .4s var(--ease);
+}
+.step .n{font-family:var(--display);font-size:1rem;color:var(--dimmer)}
+.step h3{font-size:clamp(1.15rem,1.9vw,1.5rem)}
+.step p{font-size:.94rem;color:var(--dim);line-height:1.72;max-width:48ch}
+.pull{
+  margin-top:clamp(48px,6vw,80px);
+  display:grid;grid-template-columns:minmax(0,3fr) minmax(0,8fr);gap:clamp(20px,4vw,56px);
+}
+.pull .q{font-family:var(--display);font-size:clamp(1.5rem,3.4vw,2.5rem);line-height:1.22;max-width:22ch}
+.pull .q em{font-style:italic;color:var(--dim)}
+.pull p{font-size:.92rem;color:var(--dim);max-width:46ch;margin-top:18px;line-height:1.72}
+
+/* ===== ABOUT ===== */
+.about{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:clamp(28px,5vw,80px);align-items:end}
+.about-photo{position:relative;overflow:hidden;aspect-ratio:4/5;background:var(--surface)}
+.about-photo img{width:100%;height:100%;object-fit:cover;object-position:center 18%;filter:saturate(.5) contrast(1.04);transition:filter .8s var(--ease)}
+.about-photo:hover img{filter:none}
+.about-body h2{font-size:clamp(1.8rem,4vw,3rem);margin-bottom:28px;max-width:16ch}
+.about-body p{color:var(--dim);font-size:1rem;line-height:1.78;margin-bottom:18px;max-width:52ch}
+.about-body p:last-of-type{margin-bottom:0}
+.about-body strong{color:var(--bone);font-weight:400}
+
+/* ===== PRICING ===== */
+.quote{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(28px,5vw,80px);align-items:start}
+.quote-intro{font-size:.92rem;color:var(--dim);margin-bottom:26px}
+.incl{border-top:1px solid var(--rule)}
+.incl li{
+  display:flex;gap:16px;align-items:baseline;
+  padding:14px 0;border-bottom:1px solid var(--rule);font-size:.94rem;color:var(--bone);font-weight:300;
+}
+.incl li span.i{font-family:var(--display);font-size:.8rem;color:var(--dimmer);flex:0 0 22px}
+.price-box{border-top:1px solid var(--rule-2);padding-top:22px}
+.price-label{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--dimmer);font-weight:500;margin-bottom:12px}
+.price{font-family:var(--display);font-size:clamp(1.7rem,3.2vw,2.3rem);line-height:1.1;letter-spacing:-.01em}
+.price-note{font-size:.86rem;color:var(--dim);line-height:1.7;margin-top:16px}
+
+/* ===== CASE STUDY ===== */
+.case{margin-top:clamp(48px,6vw,80px);border-top:1px solid var(--rule);padding-top:clamp(28px,4vw,44px)}
+.case-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:14px;margin-bottom:28px}
+.case-head .label{color:var(--dim)}
+.case-head .proj{font-family:var(--display);font-size:1.15rem}
+.case-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(12px,2vw,22px)}
+.case-cell figure{position:relative;aspect-ratio:16/10;overflow:hidden;background:var(--surface)}
+.case-cell img{width:100%;height:100%;object-fit:cover}
+.case-cell .ph{
+  position:absolute;inset:0;border:1px dashed var(--rule-2);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;
+  text-align:center;padding:14px;
+}
+.case-cell .ph b{font-family:var(--display);font-size:.95rem;color:var(--dim);font-weight:400}
+.case-cell .ph em{font-style:normal;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--dimmer)}
+.case-cell .st{display:flex;gap:10px;align-items:baseline;margin-top:13px;padding-top:11px;border-top:1px solid var(--rule)}
+.case-cell .st .n{font-family:var(--display);font-size:.78rem;color:var(--dimmer)}
+.case-cell .st .x{font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);font-weight:500}
+.case-cell p{font-size:.82rem;color:var(--dim);line-height:1.6;margin-top:8px}
+
+/* ===== FAQ ===== */
+.faq{border-top:1px solid var(--rule)}
+.faq-item{border-bottom:1px solid var(--rule)}
+.faq-q{
+  width:100%;display:grid;grid-template-columns:minmax(0,1fr) 28px;
+  gap:20px;align-items:start;text-align:left;
+  padding:clamp(20px,2.6vw,28px) 0;
+  font-family:var(--display);font-size:clamp(1.05rem,1.9vw,1.4rem);line-height:1.3;
+  color:var(--bone);transition:color .3s;
+}
+.faq-q:hover{color:#fff}
+.faq-q .mk{position:relative;width:15px;height:15px;justify-self:end;margin-top:.35em}
+.faq-q .mk::before,.faq-q .mk::after{
+  content:"";position:absolute;background:var(--dim);transition:transform .45s var(--ease),background .3s;
+}
+.faq-q .mk::before{top:7px;left:0;width:15px;height:1px}
+.faq-q .mk::after{top:0;left:7px;width:1px;height:15px}
+.faq-item.open .faq-q .mk::after{transform:rotate(90deg)}
+.faq-item.open .faq-q{color:#fff}
+.faq-a{overflow:hidden;max-height:0;transition:max-height .5s var(--ease),opacity .4s var(--ease);opacity:0}
+.faq-item.open .faq-a{opacity:1}
+.faq-a-inner{padding:0 0 clamp(22px,2.6vw,30px);max-width:62ch}
+.faq-a-inner p{font-size:.95rem;color:var(--dim);line-height:1.78}
+
+/* ===== FINAL ===== */
+.final{padding:clamp(90px,12vw,170px) 0;border-top:1px solid var(--rule);text-align:center}
+.final h2{font-size:clamp(2.2rem,6vw,4.4rem);max-width:16ch;margin:0 auto 26px}
+.final h2 em{font-style:italic;color:var(--dim)}
+.final .lede{margin:0 auto 44px;text-align:center}
+.final-btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-bottom:26px}
+.final-note{font-size:.78rem;color:var(--dimmer);letter-spacing:.06em}
+
+/* ===== FOOTER ===== */
+footer{border-top:1px solid var(--rule);padding:32px 0}
+.foot{display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between}
+.foot p,.foot a{font-size:.74rem;color:var(--dimmer);letter-spacing:.06em}
+.foot a{transition:color .3s}
+.foot a:hover{color:var(--bone)}
+.foot-links{display:flex;gap:26px}
+
+/* ===== LIGHTBOX ===== */
+.lightbox{
+  position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;
+  background:rgba(10,9,8,.94);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  padding:5vh 5vw;opacity:0;transition:opacity .4s var(--ease);
+}
+.lightbox[hidden]{display:none}
+.lightbox.show{opacity:1}
+.lightbox img{max-width:100%;max-height:90vh;object-fit:contain}
+.lb-close{
+  position:absolute;top:22px;right:26px;width:44px;height:44px;
+  border:1px solid var(--rule-2);color:var(--bone);font-size:1.3rem;line-height:1;
+  display:flex;align-items:center;justify-content:center;transition:border-color .3s,background .3s;
+}
+.lb-close:hover{border-color:var(--dim);background:rgba(237,232,223,.06)}
+
+/* ===== REVEAL ===== */
+.rv{opacity:0;transform:translateY(20px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.rv.in{opacity:1;transform:none}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width:1040px){
+  .award-grid{--card-h:360px}
+  .work-grid{--card-h:320px}
+  .sec-head{grid-template-columns:1fr;gap:16px}
+  .sec-head h2{max-width:20ch}
+  .pull{grid-template-columns:1fr;gap:16px}
+  .step{grid-template-columns:minmax(0,1fr) minmax(0,5fr);row-gap:10px}
+  .step .n{grid-row:1}
+  .step p{grid-column:2}
+  .about{grid-template-columns:1fr;gap:34px;align-items:start}
+  .about-photo{max-width:320px;aspect-ratio:1/1}
+  .case-grid{grid-template-columns:repeat(2,1fr)}
+  .quote{grid-template-columns:1fr;gap:40px}
+}
+@media (max-width:760px){
+  .nav-links{display:none}
+  .hero{padding-top:120px}
+  .hero-index{grid-template-columns:1fr;border-top:1px solid var(--rule)}
+  .hero-index > div{border-left:none;border-top:1px solid var(--rule);padding-left:0;padding:18px 0}
+  .hero-index > div:first-child{border-top:none}
+  /* phones: 2-up grid; widescreen pieces take the full row */
+  .award-grid,.work-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .vid{height:auto;width:100%}
+  .work-item.wide,.award-item.wide{grid-column:1 / -1}
+  .hero-cta .btn,.final-btns .btn{flex:1 1 100%}
+  .cap h3{font-size:1rem}
+  .case-grid{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:.01ms!important;transition-duration:.01ms!important}
+  html{scroll-behavior:auto}
+  .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <a href="#top" class="brand">Albert</a>
+  <div class="nav-right">
+    <div class="nav-links">
+      <a href="#work" data-i18n="nav_work">作品</a>
+      <a href="#process" data-i18n="nav_process">流程</a>
+      <a href="#about" data-i18n="nav_about">关于</a>
+      <a href="#contact" data-i18n="nav_contact">联系</a>
+    </div>
+    <div class="lang">
+      <button id="lang-cn" class="on" onclick="switchLang('cn')">中文</button>
+      <span class="sep">/</span>
+      <button id="lang-en" onclick="switchLang('en')">EN</button>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="top">
+  <div class="hero-bg"><video id="hero-reel" muted loop playsinline preload="none" poster="showreel-poster.jpg"></video></div>
+  <div class="wrap">
+    <div class="hero-inner">
+      <div class="hero-eyebrow rv">
+        <span class="rule"></span>
+        <span class="label" data-i18n="hero_badge">MMEETT「遇见未来」AI 影片大赛 冠军 &amp; 亚军</span>
+      </div>
+      <h1 class="rv" data-i18n="hero_h1">为全球品牌打造的<em>获奖级</em> AI 影片</h1>
+      <p class="hero-sub rv" data-i18n="hero_sub">从创意企划、照片级 AI 生成，到定制配乐与最终剪辑。</p>
+      <div class="hero-cta rv">
+        <a href="#" class="btn btn-solid" data-wa target="_blank" rel="noopener noreferrer" data-i18n="hero_cta1">聊聊你的项目</a>
+        <a href="#work" class="btn btn-line" data-i18n="hero_cta2">查看作品集</a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="hero-index">
+      <div><div class="v">1st &amp; 2nd</div><div class="k" data-i18n="stat1">MMEETT AI 影片大赛 2026</div></div>
+      <div><div class="v" data-i18n="stat2_n">端到端</div><div class="k" data-i18n="stat2">创意 · 生成 · 配乐 · 剪辑</div></div>
+      <div><div class="v" id="stat-turnaround">5–7 天</div><div class="k" data-i18n="stat3">常规交付周期</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 01 RECOGNITION ===== -->
+<section class="sec sec-alt" id="award">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="idx"><span class="no">01</span><span class="label" data-i18n="award_eyebrow">获奖认证</span></div>
+      <div>
+        <h2 data-i18n="award_h2">两支作品参赛。<em>两座领奖台。</em></h2>
+        <p class="lede" data-i18n="award_meta">Albert 在 MMEETT「遇见未来」AI 影片大赛中同时斩获冠军与亚军。</p>
+      </div>
+    </div>
+    <div class="award-grid" id="award-grid"></div>
+  </div>
+</section>
+
+<!-- ===== 02 SELECTED WORK ===== -->
+<section class="sec" id="work">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="idx"><span class="no">02</span><span class="label" data-i18n="work_eyebrow">作品集</span></div>
+      <div>
+        <h2 data-i18n="work_h2">近期作品</h2>
+        <p class="lede" data-i18n="work_lede">商业广告、企业培训影片、社群短视频。</p>
+      </div>
+    </div>
+    <div class="tabs rv" id="tabs"></div>
+    <div class="work-grid" id="work-grid"></div>
+  </div>
+</section>
+
+<!-- ===== 03 PROCESS ===== -->
+<section class="sec sec-alt" id="process">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="idx"><span class="no">03</span><span class="label" data-i18n="proc_eyebrow">合作流程</span></div>
+      <div>
+        <h2 data-i18n="proc_h2">从简报到成片，<em>一个人完成。</em></h2>
+        <p class="lede" data-i18n="proc_lede">四个步骤，一个对接窗口。</p>
+      </div>
+    </div>
+    <div class="steps">
+      <div class="step rv"><span class="n">01</span><h3 data-i18n="step1_h">创意与分镜</h3><p data-i18n="step1_p"></p></div>
+      <div class="step rv"><span class="n">02</span><h3 data-i18n="step2_h">照片级 AI 生成</h3><p data-i18n="step2_p"></p></div>
+      <div class="step rv"><span class="n">03</span><h3 data-i18n="step3_h">声音设计与配乐</h3><p data-i18n="step3_p"></p></div>
+      <div class="step rv"><span class="n">04</span><h3 data-i18n="step4_h">剪辑与最终打磨</h3><p data-i18n="step4_p"></p></div>
+    </div>
+    <div class="case rv" id="case"></div>
+    <div class="pull rv">
+      <div></div>
+      <div>
+        <div class="q" data-i18n="speed_big">30–60 秒品牌影片，<em>5–7 天</em>交付。</div>
+        <p data-i18n="speed_p"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 04 ABOUT ===== -->
+<section class="sec" id="about">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="idx"><span class="no">04</span><span class="label" data-i18n="about_eyebrow">关于 Albert</span></div>
+      <div></div>
+    </div>
+    <div class="about">
+      <div class="about-photo rv"><img src="albert-photo.jpg.jpg" alt="Albert" loading="lazy"></div>
+      <div class="about-body rv">
+        <h2 data-i18n="about_h2">和你对接的，<em>始终是同一个人。</em></h2>
+        <p data-i18n="about_p1"></p>
+        <p data-i18n="about_p2"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 05 PRICING ===== -->
+<section class="sec sec-alt" id="pricing">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="idx"><span class="no">05</span><span class="label" data-i18n="price_eyebrow">报价方式</span></div>
+      <div>
+        <h2 data-i18n="price_h2">每个项目<em>单独报价。</em></h2>
+        <p class="lede" data-i18n="price_lede">影片长度、画面复杂度、交付版本数量各不相同。</p>
+      </div>
+    </div>
+    <div class="quote rv">
+      <div>
+        <p class="quote-intro" data-i18n="price_inc_desc">无论项目大小，报价都已包含：</p>
+        <ul class="incl">
+          <li><span class="i">01</span><span data-i18n="inc1"></span></li>
+          <li><span class="i">02</span><span data-i18n="inc2"></span></li>
+          <li><span class="i">03</span><span data-i18n="inc3"></span></li>
+          <li><span class="i">04</span><span data-i18n="inc4"></span></li>
+          <li><span class="i">05</span><span data-i18n="inc5"></span></li>
+          <li><span class="i">06</span><span data-i18n="inc6"></span></li>
+        </ul>
+      </div>
+      <div class="price-box">
+        <div class="price-label" data-i18n="price_from_label">项目起价</div>
+        <div class="price" id="price-from">RM 400</div>
+        <p class="price-note" data-i18n="price_note"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 06 FAQ ===== -->
+<section class="sec" id="faq">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="idx"><span class="no">06</span><span class="label" data-i18n="faq_eyebrow">常见问题</span></div>
+      <div>
+        <h2 data-i18n="faq_h2">版权、授权<em>与合作细节。</em></h2>
+        <p class="lede" data-i18n="faq_lede">企业客户最常问的六个问题。</p>
+      </div>
+    </div>
+    <div class="faq rv" id="faq-list"></div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section class="final" id="contact">
+  <div class="wrap">
+    <h2 class="rv" data-i18n="final_h2">把你的简报<em>发过来。</em></h2>
+    <p class="lede rv" data-i18n="final_lede"></p>
+    <div class="final-btns rv">
+      <a href="#" class="btn btn-solid" data-wa target="_blank" rel="noopener noreferrer" data-i18n="final_cta1">WhatsApp 预约线上会议</a>
+      <a href="#" class="btn btn-line" data-mail data-i18n="final_cta2">发送邮件简报</a>
+    </div>
+    <p class="final-note rv" data-i18n="final_note"></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <p>© <span id="yr"></span> Albert — <span data-i18n="foot_tag">AI 影片制作</span></p>
+    <div class="foot-links">
+      <a href="#" data-wa target="_blank" rel="noopener noreferrer">WhatsApp</a>
+      <a href="#" data-mail data-i18n="foot_mail">邮件</a>
+    </div>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox" hidden>
+  <button class="lb-close" id="lb-close" aria-label="Close">&times;</button>
+  <img id="lb-img" src="" alt="">
+</div>
+
+<script>
+const CONFIG = {
+  // WhatsApp, international format, no "+" and no spaces.
+  whatsapp: "60124861148",
+
+  email: "sodong2901@gmail.com",
+
+  // Entry price for a finished video under one minute.
+  priceFrom: "RM 400",
+
+  turnaround: { cn: "5–7 天", en: "5–7 days" },
+
+  competition: {
+    cn: "MMEETT「遇见未来」AI 影片大赛",
+    en: "MMEETT “Meet the Future” AI Film Competition",
+    year: "2026"
+  },
+
+  // `vertical: true` = 9:16 Short. Verified against YouTube's thumbnail data.
+  awards: [
+    { place: 1, yt: "c999FfspfRQ", vertical: false,
+      cert: "cert-1st.jpg",
+      title: { cn: "Echo 7", en: "Echo 7" },
+      line: { cn: "赛博义体、光轨机车，与紧追不舍的机械军团。",
+              en: "A cybernetic drifter, a Tron-lit highway, and the machines closing in." } },
+    { place: 2, yt: "TNkFKHdAoVk", vertical: true,
+      cert: "cert-2nd.jpg",
+      title: { cn: "遇见未来的自己", en: "Meeting Your Future Self" },
+      line: { cn: "他拖着疲惫回到漆黑的家。手表逆转，门后透出金光。",
+              en: "A man comes home to the dark. His watch turns back — and the door opens in gold." } }
+  ],
+
+  // cat: "commercial" | "training" | "social"
+  work: [
+    { yt: "TsHfqhpWxzg", vertical: false, cat: "social",
+      title: { cn: "等一辆永远不来的巴士", en: "Waiting For The Bus That Never Comes" },
+      line: { cn: "小孙女陪爷爷在站牌下，等一个永远不会到站的人。全片配乐由 Albert 亲自创作。",
+              en: "A girl waits at the stop with her grandfather for a son who is never coming. Original score composed by Albert." } },
+    { yt: "_Tarxtl0_yM", vertical: true, cat: "commercial",
+      title: { cn: "Regine AI", en: "Regine AI" },
+      line: { cn: "真实到让人不敢相信的房产展示——连出镜的中介本人，也是 AI。",
+              en: "A property tour so real you won’t believe the agent isn’t either." } },
+    { yt: "f4dIXRmusOE", vertical: true, cat: "commercial",
+      title: { cn: "Kysont AI", en: "Kysont AI" },
+      line: { cn: "街头斗殴，转场嘛嘛档。一支广告说明白：产品片为什么不必再实拍。",
+              en: "A street brawl, a mamak table, and the case against expensive live product shoots." } },
+    { yt: "VyltjpBekdw", vertical: true, cat: "training",
+      title: { cn: "Kira AI", en: "Kira AI" },
+      line: { cn: "泰拳馆里的一场训练——而拍出这支片的人，几个月前对此一无所知。",
+              en: "Shot in a Muay Thai gym — by someone who knew nothing about any of this a few months ago." } },
+    { yt: "0KG0S4DodI8", vertical: true, cat: "training",
+      title: { cn: "Albert AI", en: "Albert AI" },
+      line: { cn: "义体化的双手、餐桌上仍在说话的头颅，以及一具回来认领它的身体。",
+              en: "Cyborg hands, a talking head left on the kitchen table, and a body that comes back for it." } }
+  ],
+
+  // Showreel loop behind the hero. Local file ("showreel.mp4") or full URL.
+  // null = gradient-only hero (still looks finished).
+  heroReel: "showreel.mp4",
+
+  // "auto" shows the category tabs once there are 9+ pieces; true/false force it.
+  showTabs: "auto",
+
+  // ▸ NEEDS 4 STILLS FROM ALBERT. Set `src` to a filename in this folder
+  //   (e.g. "case-01-board.jpg") and the dashed placeholder is replaced.
+  //   `project` names which film is being walked through.
+  caseStudy: {
+    project: { cn: "Echo 7", en: "Echo 7" },
+    stills: [
+      { src: null, stage: { cn: "简报", en: "The brief" } },
+      { src: null, stage: { cn: "分镜", en: "Storyboard" } },
+      { src: null, stage: { cn: "原始生成", en: "Raw generation" } },
+      { src: null, stage: { cn: "成片调色", en: "Final grade" } }
+    ]
+  }
+};
+
+/* ===== i18n ===== */
+const CATS = {
+  all:        { cn: "全部作品", en: "All Work" },
+  commercial: { cn: "产品与房产", en: "Product & Property" },
+  training:   { cn: "课程与转化", en: "Course & Conversion" },
+  social:     { cn: "叙事与社群", en: "Narrative & Social" }
+};
+
+const I18N = {
+  cn: {
+    nav_work:"作品", nav_process:"流程", nav_about:"关于", nav_contact:"联系",
+    hero_badge:"MMEETT「遇见未来」AI 影片大赛 冠军 & 亚军",
+    hero_h1:'为全球品牌打造的<br><span class="grad">获奖级 AI 视频</span>',
+    hero_sub:"从创意企划、照片级 AI 生成，到定制配乐与最终剪辑。完整的影片制作流程，以 AI 的速度交付。",
+    hero_cta1:"聊聊你的项目", hero_cta2:"查看作品集",
+    stat1:"MMEETT AI 影片大赛 2026", stat2_n:"端到端", stat2:"创意 · 生成 · 配乐 · 剪辑",
+    stat3:"常规交付周期",
+    award_eyebrow:"获奖认证",
+    award_h2:"两支作品参赛。<br>两座领奖台。",
+    award_meta:"Albert 代表 One Percent Club 参赛，在{comp}中同时拿下冠军与亚军 —— 提交的每一支作品都进入了得奖名单。",
+    work_eyebrow:"作品集", work_h2:"概念影片集",
+    work_lede:"以下均为自主创作的概念影片，分别对应品牌最常委托的几种形式：房地产、产品、课程发布与社群叙事。每一帧画面、每一段配乐与剪辑，都由本人独立完成。",
+    proc_eyebrow:"合作流程",
+    proc_h2:"从简报到成片，<br>一个人搞定全流程。",
+    proc_lede:"不需要协调摄制组、场地、演员和后期公司。四个步骤，一个对接窗口。",
+    step1_h:"创意与分镜", step1_p:"把企业简报拆解成清晰的视觉方案与分镜脚本，作为后续制作的蓝图。简报越具体，成片越贴近你要的东西。",
+    step2_h:"照片级 AI 生成", step2_p:"用前沿模型生成画面，逐帧调校提示词，直到符合品牌视觉调性。",
+    step3_h:"声音设计与配乐", step3_p:"为影片量身定制音乐、音效与旁白，不套用现成罐头音轨。",
+    step4_h:"剪辑与最终打磨", step4_p:"节奏、调色、字幕一次到位，并按各社群平台尺寸输出交付。",
+    speed_big:"30–60 秒品牌影片，<em>5–7 天</em>交付。",
+    speed_p:"没有摄制组档期、没有场地租借、没有重拍成本，改稿通常当天完成。较长的影片、系列内容与高复杂度项目会另行排期。",
+    about_eyebrow:"关于 Albert",
+    about_h2:"和你对接的，<br>始终是同一个人。",
+    about_p1:"我是 Albert，专注于用 AI 为品牌制作商业影片。从创意、生成、配乐到剪辑，整条链路由我亲自完成 —— 你不会被转手给第三个外包团队。",
+    about_p2:"在<strong>{comp}</strong>中，我提交的两支作品分别拿下<strong>冠军与亚军</strong>。下面的概念影片用的是同一套方法——也是我会用在你的简报上的方法：专业制作公司的水准，十分之一的时间与预算。",
+    price_eyebrow:"报价方式", price_h2:"每个项目单独报价。",
+    price_lede:"影片长度、画面复杂度、交付版本数量各不相同，所以我不卖套餐 —— 先看简报，再给准确报价。",
+    price_inc_desc:"无论项目大小，报价都已包含：",
+    inc1:"创意企划与分镜脚本", inc2:"全部 AI 画面生成与调校",
+    inc3:"定制配乐、音效与混音", inc4:"剪辑、调色与字幕",
+    inc5:"多平台尺寸输出（横屏 / 竖屏 / 方形）", inc6:"两轮免费修改",
+    price_from_label:"项目起价",
+    price_note:"一分钟以内的成片起价。更长的影片、多版本战役与高复杂度项目按范围另行报价 —— 把简报发给我，24 小时内回覆。",
+    final_eyebrow:"下一步", final_h2:"把你的简报发过来。",
+    final_lede:"用一句话说明你想要的影片，我会直接回覆可行方案、时间与报价。也可以直接约一次线上会议详谈。",
+    final_cta1:"WhatsApp 预约线上会议", final_cta2:"发送邮件简报",
+    final_note:"通常在 24 小时内回覆 · 接受中文与英文简报",
+    foot_tag:"AI 影片制作", foot_mail:"邮件",
+    slot_label:"影片位", slot_hint:"待上传",
+    faq_eyebrow:"常见问题", faq_h2:"版权、授权<em>与合作细节。</em>",
+    faq_lede:"企业客户最常问的六个问题。若你的情况不在其中，直接问我。",
+    case_label:"流程实例", case_note:"以下为单一项目从简报到成片的完整过程。",
+    case_stage:"阶段", case_ph:"待补图",
+    faq:[
+      {q:"成片的版权归谁？",
+       a:"归你。尾款结清后，影片的完整所有权与商业使用权即转移给你，包括付费广告、电视播放与社群平台，没有年限限制，也没有二次授权费用。"},
+      {q:"可以直接投放付费广告吗？",
+       a:"可以。交付的成片已可直接用于付费社群广告、展示广告与电视播放。配乐是我为影片原创的，不使用素材库音轨，因此不存在音乐授权到期或被下架的风险。"},
+      {q:"能按照我们的品牌规范制作吗？",
+       a:"可以。在发简报时一并把品牌手册给我——色彩、字体、语气、以及不能出现的元素。这些会在制作开始前就写进分镜里。制作过程中我不会分阶段送审，你看到的是完整成片，需要调整的地方在两轮修改里处理。"},
+      {q:"能出现我们真实的产品或人物吗？",
+       a:"可以，但这一项需要你先配合。请提供清晰、光线充足的产品照片——多个角度，包装与 logo 要看得清。出镜人物同理。参考图的质量直接决定成片能还原到什么程度：模糊或只有单一角度的照片，会限制最终的相似度。我的目标是尽可能接近实物，但不承诺逐像素一致。涉及真人肖像，需要本人书面同意。"},
+      {q:"如果成片看起来很像 AI 做的怎么办？",
+       a:"这正是两轮修改存在的意义——你在成片上指出不对的地方，我来修。判断标准不是“是不是 AI 生成”，而是“能不能用”。可以先看 Echo 7 与《遇见未来的自己》：它们在 MMEETT 大赛中拿下冠军与亚军，评审标准里就包含成片完成度。"},
+      {q:"开始之前需要我提供什么？",
+       a:"一段话就够：影片用途、投放渠道、大致长度、截止日期，以及现有的品牌素材。如果片中要出现真实产品或人物，请一并附上清晰照片。收到后 24 小时内我会回覆可行方案、时间与报价。"}
+    ],
+    place_1:"冠军", place_2:"亚军", cert_view:"查看获奖证书",
+    wa_msg:"你好 Albert，我从你的网站看到你的作品，想预约一次线上会议讨论我们品牌的影片需求。",
+    mail_subject:"影片项目咨询（来自官网）",
+    mail_body:"你好 Albert，\n\n我从你的网站看到你的作品，想讨论一个影片项目。\n\n品牌／公司：\n影片用途：\n预计长度：\n期望交付时间：\n预算范围：\n\n期待你的回覆。"
+  },
+  en: {
+    nav_work:"Work", nav_process:"Process", nav_about:"About", nav_contact:"Contact",
+    hero_badge:"1st & 2nd Place — MMEETT “Meet The Future” AI Film Competition",
+    hero_h1:'Award-Winning <span class="grad">AI Video Production</span> for Global Brands',
+    hero_sub:"From concept and photorealistic AI generation to custom music scoring and final edit. Full-scale video production at the speed of AI.",
+    hero_cta1:"Let's Discuss Your Project", hero_cta2:"View the Work",
+    stat1:"MMEETT AI Film Competition 2026", stat2_n:"End-to-End", stat2:"Concept · Generate · Score · Edit",
+    stat3:"Typical Turnaround",
+    award_eyebrow:"Recognition",
+    award_h2:"Two entries submitted.<br>Two podium finishes.",
+    award_meta:"Competing as One Percent Club, Albert took both 1st place and 1st runner-up at the {comp} — every entry he submitted placed.",
+    work_eyebrow:"Selected Work", work_h2:"Concept Films",
+    work_lede:"Self-initiated concept films, each built to demonstrate a format brands commission — property, product, course launch and social narrative. Every frame generated, every score composed, every cut made in-house.",
+    proc_eyebrow:"How It Works",
+    proc_h2:"Brief to final cut,<br>handled by one person.",
+    proc_lede:"No crew scheduling, no location hire, no post house hand-offs. Four steps, one point of contact.",
+    step1_h:"Concept & Storyboarding", step1_p:"Your brief becomes a clear visual direction and a shot-by-shot board — the blueprint everything downstream is built from. The more specific the brief, the closer the first cut lands.",
+    step2_h:"Photorealistic AI Generation", step2_p:"Frontier models, prompt-engineered shot by shot until the footage matches your brand's visual language.",
+    step3_h:"Sound Design & Custom Audio", step3_p:"Original score, sound design and voiceover produced for your film — never library stock dropped on top.",
+    step4_h:"Final Editorial & Polish", step4_p:"Pacing, grade and subtitles locked, then delivered in every aspect ratio each platform needs.",
+    speed_big:"A 30–60s brand film, delivered in <em>5–7 days</em>.",
+    speed_p:"No crew availability, no location fees, no cost to reshoot — revisions usually turn around same-day. Longer films, series work and high-complexity builds are scheduled to scope.",
+    about_eyebrow:"About Albert",
+    about_h2:"You deal with<br>the same person throughout.",
+    about_p1:"I'm Albert. I produce commercial video for brands using AI — concept, generation, scoring and edit all handled by me. You're never handed off to a third-party team halfway through.",
+    about_p2:"At the <strong>{comp}</strong> I entered two films and took <strong>1st and 2nd place</strong>. The concept films below run on that same process — and it is the process I will run on your brief: production-house quality, at a fraction of the time and budget.",
+    price_eyebrow:"Pricing", price_h2:"Every project is quoted individually.",
+    price_lede:"Runtime, visual complexity and the number of delivered cuts vary with every brand — so there are no fixed packages. Send the brief, get an exact number.",
+    price_inc_desc:"Every quote, whatever the scope, includes:",
+    inc1:"Concept development and storyboarding", inc2:"All AI generation and shot refinement",
+    inc3:"Custom score, sound design and mix", inc4:"Editorial, colour grade and subtitles",
+    inc5:"Multi-platform exports (16:9 / 9:16 / 1:1)", inc6:"Two rounds of revisions",
+    price_from_label:"Projects start from",
+    price_note:"For a finished video under one minute. Longer films, multi-cut campaigns and higher-complexity work are quoted to scope — send your brief and you'll have a number within 24 hours.",
+    final_eyebrow:"Next Step", final_h2:"Send over your brief.",
+    final_lede:"One line on the film you need and you'll get a straight answer on approach, timeline and cost — or book a short call to talk it through.",
+    final_cta1:"Chat on WhatsApp to Book a Call", final_cta2:"Email Your Brief",
+    final_note:"Usually replies within 24 hours · Briefs accepted in English or 中文",
+    foot_tag:"AI Video Production", foot_mail:"Email",
+    slot_label:"Video slot", slot_hint:"To be added",
+    faq_eyebrow:"Questions", faq_h2:"Ownership, usage<em> and the fine print.</em>",
+    faq_lede:"The six things corporate clients ask before commissioning. If yours isn’t here, just ask.",
+    case_label:"Process in practice", case_note:"One project, brief to final frame.",
+    case_stage:"Stage", case_ph:"Still to come",
+    faq:[
+      {q:"Who owns the finished video?",
+       a:"You do. On final payment, full ownership and unlimited commercial usage rights transfer to you — paid advertising, broadcast and social included. No term limit, no recurring licence fee."},
+      {q:"Can we run it as paid media?",
+       a:"Yes. Everything is delivered cleared for paid social, display and broadcast. The score is composed originally for your film rather than pulled from a stock library, so there is no music licence to expire and no track that can be pulled out from under a live campaign."},
+      {q:"Can you work to our brand guidelines?",
+       a:"Yes. Send the brand book along with the brief — palette, typography, tone, and anything that must not appear. Those constraints are built into the board before production starts. I don’t send work out for approval stage by stage: what you receive is a finished cut, and anything that needs adjusting is handled in the two revision rounds."},
+      {q:"Can you feature our actual product or people?",
+       a:"Yes, and this is the one part that depends on you. Send clear, well-lit photographs of the product — several angles, with packaging and logo legible. Same for anyone who appears on screen. The quality of those references sets how closely the film can match the real thing: blurry or single-angle photos put a hard ceiling on it. The aim is as close as it can get, not a pixel-exact replica. Featuring a real person also requires their written consent."},
+      {q:"What if it comes out looking obviously AI-generated?",
+       a:"That is what the two revision rounds are for — you flag what isn’t working on the delivered cut and it gets fixed. The bar is not ‘was this generated’ but ‘is this usable’. Echo 7 and Meeting Your Future Self are the evidence: they took 1st and 2nd at the MMEETT competition, judged on finished craft."},
+      {q:"What do you need from us to start?",
+       a:"A paragraph. What the film is for, where it will run, rough runtime, your deadline, and any brand assets you have. If a real product or person features, clear photographs of both. You will have an approach, a timeline and a number back within 24 hours."}
+    ],
+    place_1:"1st Place", place_2:"2nd Place", cert_view:"View certificate",
+    wa_msg:"Hi Albert — I found you through your website and I'd like to book an online meeting to discuss a video project for my brand.",
+    mail_subject:"Video project enquiry (via website)",
+    mail_body:"Hi Albert,\n\nI found your work through your website and would like to discuss a video project.\n\nCompany / brand:\nWhat the video is for:\nApproximate runtime:\nDeadline:\nBudget range:\n\nLooking forward to hearing from you."
+  }
+};
+
+let lang = 'cn';
+
+
+/* ===== helpers ===== */
+const t = k => I18N[lang][k] ?? '';
+const comp = () => CONFIG.competition[lang] + (CONFIG.competition.year ? ' ' + CONFIG.competition.year : '');
+const fill = s => s.replace('{comp}', comp());
+
+function waHref(){ return 'https://wa.me/' + CONFIG.whatsapp + '?text=' + encodeURIComponent(t('wa_msg')); }
+function mailHref(){
+  return 'mailto:' + CONFIG.email + '?subject=' + encodeURIComponent(t('mail_subject'))
+       + '&body=' + encodeURIComponent(t('mail_body'));
+}
+function refreshContacts(){
+  document.querySelectorAll('[data-wa]').forEach(a => a.href = waHref());
+  document.querySelectorAll('[data-mail]').forEach(a => a.href = mailHref());
+}
+
+/* ===== video cards ===== */
+const PLAY_SVG = '<svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>';
+const SLOT_SVG = '<svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="m22 8-6 4 6 4V8Z"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg>';
+const CERT_SVG = '<svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="m8.2 13.4-1.2 7.6 5-3 5 3-1.2-7.6"/></svg>';
+
+function thumb(v){
+  if (!v.yt) return '';
+  // Shorts only carry a true 9:16 still at /oardefault.jpg; 16:9 uses maxres.
+  return 'https://i.ytimg.com/vi/' + v.yt + (v.vertical ? '/oardefault.jpg' : '/maxresdefault.jpg');
+}
+
+function videoCard(v, opts){
+  opts = opts || {};
+  const el = document.createElement('div');
+  el.className = 'vid' + (v.vertical ? ' portrait' : '') + (opts.noFilter ? ' nofilter' : '');
+
+  if (!v.yt && !v.vimeo){
+    el.classList.add('empty');
+    el.innerHTML = '<div class="slot">' + SLOT_SVG
+      + '<b>' + (v.title ? v.title[lang] : '') + '</b>'
+      + '<em>' + t('slot_hint') + '</em></div>';
+    return el;
+  }
+
+  el.innerHTML = (opts.tag || '') + '<div class="play"><i>' + PLAY_SVG + '</i></div>';
+  const img = document.createElement('img');
+  img.loading = 'lazy';
+  img.alt = v.title ? v.title[lang] : '';
+  img.src = thumb(v);
+  img.addEventListener('error', function onErr(){
+    img.removeEventListener('error', onErr);
+    img.src = 'https://i.ytimg.com/vi/' + v.yt + '/hqdefault.jpg';
+  });
+  el.insertBefore(img, el.firstChild);
+
+  el.addEventListener('click', () => {
+    const src = v.yt
+      ? 'https://www.youtube-nocookie.com/embed/' + v.yt + '?autoplay=1&rel=0&modestbranding=1'
+      : 'https://player.vimeo.com/video/' + v.vimeo + '?autoplay=1';
+    el.innerHTML = (opts.tag || '')
+      + '<iframe src="' + src + '" title="' + (v.title ? v.title[lang] : '') + '"'
+      + ' allow="accelerometer; autoplay; clipboard-write; encrypted-media; picture-in-picture" allowfullscreen></iframe>';
+  }, { once: true });
+
+  if (touchReveal) revealIO.observe(el);
+  return el;
+}
+
+/* Touch devices have no hover, so thumbnails bloom as they scroll into view. */
+const touchReveal = window.matchMedia('(hover: none)').matches;
+const revealIO = new IntersectionObserver((es) => {
+  es.forEach(e => { if (e.isIntersecting){ e.target.classList.add('lit'); revealIO.unobserve(e.target); } });
+}, { threshold: 0.35 });
+
+function caption(v, metaText){
+  const cap = document.createElement('div');
+  cap.className = 'cap';
+  cap.innerHTML = '<h3>' + v.title[lang] + '</h3>'
+    + (v.line ? '<p class="line">' + v.line[lang] + '</p>' : '')
+    + '<span class="meta">' + metaText + '</span>';
+  if (v.cert){
+    const a = document.createElement('a');
+    a.className = 'cert-link';
+    a.href = '#';
+    a.innerHTML = CERT_SVG + '<span>' + t('cert_view') + '</span>';
+    a.addEventListener('click', ev => { ev.preventDefault(); openLightbox(v.cert, v.title[lang]); });
+    cap.appendChild(a);
+  }
+  return cap;
+}
+
+/* ===== render ===== */
+function renderAwards(){
+  const grid = document.getElementById('award-grid');
+  grid.innerHTML = '';
+  CONFIG.awards.forEach(a => {
+    const label = a.place === 1 ? t('place_1') : t('place_2');
+    const box = document.createElement('div');
+    box.className = 'award-item' + (a.vertical ? '' : ' wide');
+    // award films are never desaturated — the neon is the point
+    box.appendChild(videoCard(a, { tag: '<span class="place-tag">' + label + '</span>', noFilter: true }));
+    box.appendChild(caption(a, comp()));
+    grid.appendChild(box);
+  });
+}
+
+let activeCat = 'all';
+function renderTabs(){
+  const box = document.getElementById('tabs');
+  box.innerHTML = '';
+  const show = CONFIG.showTabs === 'auto' ? CONFIG.work.length >= 9 : !!CONFIG.showTabs;
+  box.style.display = show ? '' : 'none';
+  if (!show){ activeCat = 'all'; return; }
+  const used = ['all', ...['commercial','training','social'].filter(c => CONFIG.work.some(w => w.cat === c))];
+  used.forEach(c => {
+    const b = document.createElement('button');
+    b.className = 'tab' + (c === activeCat ? ' on' : '');
+    b.textContent = CATS[c][lang];
+    b.onclick = () => { activeCat = c; renderTabs(); filterWork(); };
+    box.appendChild(b);
+  });
+}
+
+function renderWork(){
+  const grid = document.getElementById('work-grid');
+  grid.innerHTML = '';
+  CONFIG.work.forEach(w => {
+    const box = document.createElement('div');
+    box.className = 'work-item' + (w.vertical ? '' : ' wide');
+    box.dataset.cat = w.cat;
+    box.appendChild(videoCard(w));
+    box.appendChild(caption(w, CATS[w.cat][lang]));
+    grid.appendChild(box);
+  });
+  filterWork();
+}
+function filterWork(){
+  document.querySelectorAll('.work-item').forEach(el => {
+    el.classList.toggle('hide', activeCat !== 'all' && el.dataset.cat !== activeCat);
+  });
+}
+
+/* ===== case study ===== */
+function renderCase(){
+  const box = document.getElementById('case');
+  const cs = CONFIG.caseStudy;
+  if (!box || !cs){ return; }
+  box.innerHTML =
+    '<div class="case-head">'
+      + '<span class="label">' + t('case_label') + '</span>'
+      + '<span class="proj">' + cs.project[lang] + '</span>'
+      + '<span class="label" style="flex:1 1 100%">' + t('case_note') + '</span>'
+    + '</div>';
+  const grid = document.createElement('div');
+  grid.className = 'case-grid';
+  cs.stills.forEach((st, i) => {
+    const n = String(i + 1).padStart(2, '0');
+    const cell = document.createElement('div');
+    cell.className = 'case-cell';
+    const inner = st.src
+      ? '<img src="' + st.src + '" alt="' + st.stage[lang] + '" loading="lazy">'
+      : '<div class="ph"><b>' + st.stage[lang] + '</b><em>' + t('case_ph') + '</em></div>';
+    cell.innerHTML = '<figure>' + inner + '</figure>'
+      + '<div class="st"><span class="n">' + n + '</span><span class="x">' + st.stage[lang] + '</span></div>';
+    grid.appendChild(cell);
+  });
+  box.appendChild(grid);
+}
+
+/* ===== faq ===== */
+function renderFaq(){
+  const box = document.getElementById('faq-list');
+  if (!box) return;
+  box.innerHTML = '';
+  (I18N[lang].faq || []).forEach((item, i) => {
+    const row = document.createElement('div');
+    row.className = 'faq-item';
+    const id = 'faq-a-' + i;
+    row.innerHTML =
+      '<button class="faq-q" aria-expanded="false" aria-controls="' + id + '">'
+        + '<span>' + item.q + '</span><span class="mk" aria-hidden="true"></span>'
+      + '</button>'
+      + '<div class="faq-a" id="' + id + '"><div class="faq-a-inner"><p>' + item.a + '</p></div></div>';
+    const btn = row.querySelector('.faq-q');
+    const ans = row.querySelector('.faq-a');
+    btn.addEventListener('click', () => {
+      const open = row.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      ans.style.maxHeight = open ? (ans.scrollHeight + 'px') : '';
+    });
+    box.appendChild(row);
+  });
+}
+
+/* ===== lightbox (certificates) ===== */
+const lb = document.getElementById('lightbox');
+const lbImg = document.getElementById('lb-img');
+function openLightbox(src, alt){
+  lbImg.src = src; lbImg.alt = alt || '';
+  lb.hidden = false;
+  requestAnimationFrame(() => lb.classList.add('show'));
+}
+function closeLightbox(){
+  lb.classList.remove('show');
+  setTimeout(() => { lb.hidden = true; lbImg.src = ''; }, 400);
+}
+document.getElementById('lb-close').addEventListener('click', closeLightbox);
+lb.addEventListener('click', e => { if (e.target === lb) closeLightbox(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && !lb.hidden) closeLightbox(); });
+
+/* ===== language ===== */
+function switchLang(l){
+  lang = l;
+  document.documentElement.lang = l === 'cn' ? 'zh-CN' : 'en';
+  document.getElementById('lang-cn').classList.toggle('on', l === 'cn');
+  document.getElementById('lang-en').classList.toggle('on', l === 'en');
+
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const v = I18N[l][el.dataset.i18n];
+    if (v !== undefined) el.innerHTML = fill(v);
+  });
+
+  document.getElementById('stat-turnaround').textContent = CONFIG.turnaround[l];
+  document.getElementById('price-from').textContent = CONFIG.priceFrom;
+
+  refreshContacts();
+  renderAwards();
+  renderTabs();
+  renderWork();
+  renderCase();
+  renderFaq();
+  try { localStorage.setItem('albert_lang', l); } catch(e) {}
+}
+
+/* ===== scroll reveal + nav ===== */
+const io = new IntersectionObserver((es) => {
+  es.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.rv').forEach(el => io.observe(el));
+
+let rsz;
+window.addEventListener('resize', () => {
+  clearTimeout(rsz);
+  rsz = setTimeout(() => {
+    document.querySelectorAll('.faq-item.open .faq-a').forEach(a => {
+      a.style.maxHeight = a.scrollHeight + 'px';
+    });
+  }, 150);
+});
+
+const nav = document.getElementById('nav');
+const onScroll = () => nav.classList.toggle('solid', window.scrollY > 24);
+window.addEventListener('scroll', onScroll, { passive: true });
+onScroll();
+
+/* ===== boot ===== */
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+if (CONFIG.heroReel){
+  const conn = navigator.connection || {};
+  const heavy = conn.saveData === true || /(^|-)2g$/.test(conn.effectiveType || '');
+  const still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!heavy && !still){
+    const v = document.getElementById('hero-reel');
+    v.src = CONFIG.heroReel;
+    v.preload = 'auto';
+    v.play().catch(() => {});   // blocked autoplay just leaves the poster up
+  }
+}
+
+let saved = 'cn';
+try { saved = localStorage.getItem('albert_lang') || 'cn'; } catch(e) {}
+switchLang(saved);
+</script>
+</body>
+</html>
