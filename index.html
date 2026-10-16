@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Albert — AI Film Production</title>
-<meta name="description" content="Award-winning AI film production. Concept, photorealistic generation, original score and final edit — end to end.">
+<meta name="description" content="Award-winning AI film production. Concept, photorealistic generation, original score and final edit — end to end. Also teaches the process in hands-on workshops and in-house training.">
 <meta property="og:title" content="Albert — AI Film Production">
 <meta property="og:description" content="1st & 2nd Place, MMEETT “Meet The Future” AI Film Competition 2026. Concept, generation, original score and final edit — end to end.">
 <meta property="og:type" content="website">
@@ -273,6 +273,37 @@ em{font-style:italic}
 .pull .q em{font-style:italic;color:var(--dim)}
 .pull p{font-size:.92rem;color:var(--dim);max-width:46ch;margin-top:18px;line-height:1.72}
 
+/* ===== TEACHING ===== */
+.teach{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:clamp(28px,5vw,80px);align-items:start}
+.teach-reel .vid{height:auto;width:100%;max-width:360px}
+.vid video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#000;z-index:5}
+.teach-points{border-top:1px solid var(--rule)}
+.teach-points li{
+  display:grid;grid-template-columns:34px minmax(0,1fr);gap:12px;
+  padding:clamp(18px,2.4vw,26px) 0;border-bottom:1px solid var(--rule);
+}
+.teach-points .i{font-family:var(--display);font-size:.9rem;color:var(--dimmer);padding-top:.2em}
+.teach-points h3{font-size:clamp(1.1rem,1.7vw,1.35rem);margin-bottom:6px}
+.teach-points p{font-size:.92rem;color:var(--dim);line-height:1.7;max-width:48ch}
+.next-class{margin-top:clamp(28px,3.6vw,40px)}
+.next-class .v{font-family:var(--display);font-size:clamp(1.3rem,2.4vw,1.75rem);line-height:1.2;margin:10px 0 6px}
+.next-class .sub{font-size:.86rem;color:var(--dim);margin-bottom:22px}
+.team-link{
+  display:inline-flex;align-items:center;gap:8px;margin-top:20px;
+  font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);
+  border-bottom:1px solid var(--rule-2);padding-bottom:3px;transition:color .3s,border-color .3s;
+}
+.team-link:hover{color:var(--bone);border-color:var(--dim)}
+.students{margin-top:clamp(64px,8vw,110px)}
+.students-head{
+  display:grid;grid-template-columns:minmax(0,3fr) minmax(0,8fr);gap:clamp(20px,4vw,56px);
+  margin-bottom:clamp(30px,4vw,48px);
+}
+.students-head .q{font-family:var(--display);font-size:clamp(1.4rem,3vw,2.2rem);line-height:1.22;max-width:24ch}
+.students-head .q em{font-style:italic;color:var(--dim)}
+.student-grid{display:flex;flex-wrap:wrap;align-items:flex-start;gap:clamp(18px,2.6vw,34px);--card-h:440px}
+.student-grid .work-item{max-width:calc(var(--card-h) * 9 / 16)}
+
 /* ===== ABOUT ===== */
 .about{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:clamp(28px,5vw,80px);align-items:end}
 .about-photo{position:relative;overflow:hidden;aspect-ratio:4/5;background:var(--surface)}
@@ -386,6 +417,9 @@ footer{border-top:1px solid var(--rule);padding:32px 0}
   .step{grid-template-columns:minmax(0,1fr) minmax(0,5fr);row-gap:10px}
   .step .n{grid-row:1}
   .step p{grid-column:2}
+  .teach{grid-template-columns:1fr;gap:40px}
+  .students-head{grid-template-columns:1fr;gap:12px}
+  .student-grid{--card-h:360px}
   .about{grid-template-columns:1fr;gap:34px;align-items:start}
   .about-photo{max-width:320px;aspect-ratio:1/1}
   .quote{grid-template-columns:1fr;gap:40px}
@@ -403,6 +437,15 @@ footer{border-top:1px solid var(--rule);padding:32px 0}
   .hero-cta .btn,.final-btns .btn{flex:1 1 100%}
   .cap h3{font-size:1rem}
   .case-grid{grid-template-columns:1fr}
+  .teach-reel .vid{max-width:300px}
+  /* phones: student films scroll sideways instead of stacking three tall cards */
+  .student-grid{
+    display:flex;flex-wrap:nowrap;overflow-x:auto;scroll-snap-type:x mandatory;
+    margin:0 calc(var(--gut) * -1);padding:0 var(--gut) 6px;scrollbar-width:none;
+  }
+  .student-grid::-webkit-scrollbar{display:none}
+  .student-grid .work-item{flex:0 0 64vw;max-width:none;scroll-snap-align:start}
+  .student-grid .vid{height:auto;width:100%}
 }
 @media (prefers-reduced-motion:reduce){
   *{animation-duration:.01ms!important;transition-duration:.01ms!important}
@@ -419,6 +462,7 @@ footer{border-top:1px solid var(--rule);padding:32px 0}
     <div class="nav-links">
       <a href="#work" data-i18n="nav_work">作品</a>
       <a href="#process" data-i18n="nav_process">流程</a>
+      <a href="#teach" data-i18n="nav_teach">课程</a>
       <a href="#about" data-i18n="nav_about">关于</a>
       <a href="#contact" data-i18n="nav_contact">联系</a>
     </div>
@@ -512,11 +556,42 @@ footer{border-top:1px solid var(--rule);padding:32px 0}
   </div>
 </section>
 
-<!-- ===== 04 ABOUT ===== -->
-<section class="sec" id="about">
+<!-- ===== 04 TEACHING ===== -->
+<section class="sec" id="teach">
   <div class="wrap">
     <div class="sec-head rv">
-      <div class="idx"><span class="no">04</span><span class="label" data-i18n="about_eyebrow">关于 Albert</span></div>
+      <div class="idx"><span class="no">04</span><span class="label" data-i18n="teach_eyebrow">课堂</span></div>
+      <div>
+        <h2 data-i18n="teach_h2">同一套方法，<em>他也教。</em></h2>
+        <p class="lede" data-i18n="teach_lede"></p>
+      </div>
+    </div>
+    <div class="teach">
+      <div class="teach-reel rv" id="teach-reel"></div>
+      <div class="rv">
+        <ul class="teach-points">
+          <li><span class="i">01</span><div><h3 data-i18n="tp1_h"></h3><p data-i18n="tp1_p"></p></div></li>
+          <li><span class="i">02</span><div><h3 data-i18n="tp2_h"></h3><p data-i18n="tp2_p"></p></div></li>
+          <li><span class="i">03</span><div><h3 data-i18n="tp3_h"></h3><p data-i18n="tp3_p"></p></div></li>
+        </ul>
+        <div class="next-class" id="next-class"></div>
+      </div>
+    </div>
+    <div class="students">
+      <div class="students-head rv">
+        <div><span class="label" data-i18n="stu_label">学员作品</span></div>
+        <div class="q" data-i18n="stu_q"></div>
+      </div>
+      <div class="student-grid" id="student-grid"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 05 ABOUT ===== -->
+<section class="sec sec-alt" id="about">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="idx"><span class="no">05</span><span class="label" data-i18n="about_eyebrow">关于 Albert</span></div>
       <div></div>
     </div>
     <div class="about">
@@ -525,16 +600,17 @@ footer{border-top:1px solid var(--rule);padding:32px 0}
         <h2 data-i18n="about_h2">和你对接的，<em>始终是同一个人。</em></h2>
         <p data-i18n="about_p1"></p>
         <p data-i18n="about_p2"></p>
+        <p data-i18n="about_p3"></p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== 05 PRICING ===== -->
-<section class="sec sec-alt" id="pricing">
+<!-- ===== 06 PRICING ===== -->
+<section class="sec" id="pricing">
   <div class="wrap">
     <div class="sec-head rv">
-      <div class="idx"><span class="no">05</span><span class="label" data-i18n="price_eyebrow">报价方式</span></div>
+      <div class="idx"><span class="no">06</span><span class="label" data-i18n="price_eyebrow">报价方式</span></div>
       <div>
         <h2 data-i18n="price_h2">每个项目<em>单独报价。</em></h2>
         <p class="lede" data-i18n="price_lede">影片长度、画面复杂度、交付版本数量各不相同。</p>
@@ -561,11 +637,11 @@ footer{border-top:1px solid var(--rule);padding:32px 0}
   </div>
 </section>
 
-<!-- ===== 06 FAQ ===== -->
-<section class="sec" id="faq">
+<!-- ===== 07 FAQ ===== -->
+<section class="sec sec-alt" id="faq">
   <div class="wrap">
     <div class="sec-head rv">
-      <div class="idx"><span class="no">06</span><span class="label" data-i18n="faq_eyebrow">常见问题</span></div>
+      <div class="idx"><span class="no">07</span><span class="label" data-i18n="faq_eyebrow">常见问题</span></div>
       <div>
         <h2 data-i18n="faq_h2">版权、授权<em>与合作细节。</em></h2>
         <p class="lede" data-i18n="faq_lede">企业客户最常问的六个问题。</p>
@@ -645,7 +721,7 @@ const CONFIG = {
       title: { cn: "Regine AI", en: "Regine AI" },
       line: { cn: "真实到让人不敢相信的房产展示——连出镜的中介本人，也是 AI。",
               en: "A property tour so real you won’t believe the agent isn’t either." } },
-    { yt: "f4dIXRmusOE", vertical: true, cat: "commercial",
+    { yt: "bnvtO9tcrns", vertical: true, cat: "commercial",
       title: { cn: "Kysont AI", en: "Kysont AI" },
       line: { cn: "街头斗殴，转场嘛嘛档。一支广告说明白：产品片为什么不必再实拍。",
               en: "A street brawl, a mamak table, and the case against expensive live product shoots." } },
@@ -691,6 +767,37 @@ const CONFIG = {
           cn: "用人物参考图锁定同一张脸，贯穿全片每一个镜头——这是「一段影片」与「一堆素材」的区别。",
           en: "A character reference sheet holds the same face across every shot in the film — the detail that separates a sequence from a pile of clips." } }
     ]
+  },
+
+  // Teaching section. Self-hosted files in /teach (H.264, plays everywhere).
+  teaching: {
+    reel: { src: "teach/class-reel.mp4", poster: "teach/class-reel.jpg",
+            title: { cn: "Albert 的 AI 影片工作坊", en: "Albert's AI video workshop" } },
+
+    // "waitlist" = no class booked yet: button asks to be notified on WhatsApp.
+    // "open"     = class confirmed: fill in `next` and the button goes to `next.url`.
+    status: "waitlist",
+    next: {
+      date: { cn: "", en: "" },                // e.g. "2026 年 12 月 5 日（六）" / "Sat, 5 Dec 2026"
+      detail: { cn: "", en: "" },              // e.g. "早鸟价 RM 799，截至 11 月 28 日" / "Early bird RM 799 until 28 Nov"
+      url: ""                                  // the course funnel page
+    },
+
+    // `day` = days after class the film was posted to the group.
+    students: [
+      { src: "teach/student-cecilia.mp4", poster: "teach/student-cecilia.jpg", day: 3,
+        title: { cn: "Cecilia", en: "Cecilia" },
+        line: { cn: "之前自己摸索过 AI 影片，但人脸和场景总是变形。课后做的这支：她和自家博美同台演出，人物稳定，表情自然。",
+                en: "She'd tried AI video on her own before, but faces and scenes kept warping. After class: a comedy short co-starring her Pomeranian — faces steady, expressions natural." } },
+      { src: "teach/student-boon.mp4", poster: "teach/student-boon.jpg", day: 4,
+        title: { cn: "Boon", en: "Boon" },
+        line: { cn: "课前从没做过 AI 影片，来学是为了帮自己的生意。课后交出这支：他的车在大桥上变身机甲。隔天又发了第二支——同一辆车，在《头文字D》的弯道上和 AE86 漂移对决。",
+                en: "Had never made an AI video — he came to learn it for his business. Then this: his own car transforming on the bridge. The next day, a second film — the same car drifting the Initial D bends against an AE86." } },
+      { src: "teach/student-belinda.mp4", poster: "teach/student-belinda.jpg", day: 1,
+        title: { cn: "Belinda · Perfect Plan", en: "Belinda · Perfect Plan" },
+        line: { cn: "经营婚礼策划品牌 18 年，之前试过 AI，画面总是扭曲。课后第二天，她是全班第一个发出作品的人——一支可以直接上线的品牌广告。",
+                en: "Eighteen years running a wedding planning brand; her earlier AI attempts came out warped. One day after class she was the first in the group to post — a brand ad ready to run." } }
+    ]
   }
 };
 
@@ -698,13 +805,13 @@ const CONFIG = {
 const CATS = {
   all:        { cn: "全部作品", en: "All Work" },
   commercial: { cn: "产品与房产", en: "Product & Property" },
-  training:   { cn: "课程与转化", en: "Course & Conversion" },
+  training:   { cn: "教育与发布", en: "Education & Launch" },
   social:     { cn: "叙事与社群", en: "Narrative & Social" }
 };
 
 const I18N = {
   cn: {
-    nav_work:"作品", nav_process:"流程", nav_about:"关于", nav_contact:"联系",
+    nav_work:"作品", nav_process:"流程", nav_teach:"课程", nav_about:"关于", nav_contact:"联系",
     hero_badge:"MMEETT「遇见未来」AI 影片大赛 冠军 & 亚军",
     hero_h1:'为全球品牌打造的<br><span class="grad">获奖级 AI 视频</span>',
     hero_sub:"从创意企划、照片级 AI 生成，到定制配乐与最终剪辑。完整的影片制作流程，以 AI 的速度交付。",
@@ -725,10 +832,24 @@ const I18N = {
     step4_h:"剪辑与最终打磨", step4_p:"节奏、调色、字幕一次到位，并按各社群平台尺寸输出交付。",
     speed_big:"30–60 秒品牌影片，<em>5–7 天</em>交付。",
     speed_p:"没有摄制组档期、没有场地租借、没有重拍成本，改稿通常当天完成。较长的影片、系列内容与高复杂度项目会另行排期。",
+    teach_eyebrow:"课堂",
+    teach_h2:"同一套方法，<br><em>他也教。</em>",
+    teach_lede:"Albert 不只替品牌做片。他把这套获奖流程拆成任何人都能照着做的步骤，在实体工作坊里手把手带学员做出自己的第一支 AI 影片。",
+    tp1_h:"带走一支属于你的影片", tp1_p:"工作坊结束时，你手上已经有一支自己的完整影片，而不只是一本笔记。",
+    tp2_h:"手把手，不是坐着听", tp2_p:"带上电脑或平板。Albert 会在现场逐一走到你身边，看着你的画面一起调。",
+    tp3_h:"结业证书", tp3_p:"完成工作坊的学员，都会获得 Albert 亲自颁发的结业证书。",
+    next_label:"下一期工作坊", next_tba:"日期即将公布", next_tba_sub:"留下联系方式，开课第一时间通知你。",
+    next_cta_wait:"开课时通知我", next_cta_open:"查看课程详情",
+    team_link:"企业内训：把这套课程带进你的团队 →",
+    stu_label:"学员作品", stu_q:"三位学员，<br><em>课后四天内</em>都交出了自己的作品。",
+    stu_day:"课后第 {n} 天发布",
+    wa_wait:"你好 Albert，我在你的网站看到 AI 影片工作坊，下一期开课时请通知我。",
+    wa_team:"你好 Albert，我想了解为我们团队安排 AI 影片企业内训。",
     about_eyebrow:"关于 Albert",
     about_h2:"和你对接的，<br>始终是同一个人。",
     about_p1:"我是 Albert，专注于用 AI 为品牌制作商业影片。从创意、生成、配乐到剪辑，整条链路由我亲自完成 —— 你不会被转手给第三个外包团队。",
     about_p2:"在<strong>{comp}</strong>中，我提交的两支作品分别拿下<strong>冠军与亚军</strong>。下面的概念影片用的是同一套方法——也是我会用在你的简报上的方法：专业制作公司的水准，十分之一的时间与预算。",
+    about_p3:"除了接案，我也开课——把同一套流程，教给想自己动手的创业者和企业团队。",
     price_eyebrow:"报价方式", price_h2:"每个项目单独报价。",
     price_lede:"影片长度、画面复杂度、交付版本数量各不相同，所以我不卖套餐 —— 先看简报，再给准确报价。",
     price_inc_desc:"无论项目大小，报价都已包含：",
@@ -741,10 +862,10 @@ const I18N = {
     final_lede:"用一句话说明你想要的影片，我会直接回覆可行方案、时间与报价。也可以直接约一次线上会议详谈。",
     final_cta1:"WhatsApp 预约线上会议", final_cta2:"发送邮件简报",
     final_note:"通常在 24 小时内回覆 · 接受中文与英文简报",
-    foot_tag:"AI 影片制作", foot_mail:"邮件",
+    foot_tag:"AI 影片制作 · 教学", foot_mail:"邮件",
     slot_label:"影片位", slot_hint:"待上传",
     faq_eyebrow:"常见问题", faq_h2:"版权、授权<em>与合作细节。</em>",
-    faq_lede:"企业客户最常问的六个问题。若你的情况不在其中，直接问我。",
+    faq_lede:"合作前最常被问到的问题。若你的情况不在其中，直接问我。",
     case_label:"流程实例", case_note:"近期项目的实际工作截图。来自不同项目，对应同一条流程的四个阶段。",
     case_ph:"待补图",
     faq:[
@@ -759,7 +880,9 @@ const I18N = {
       {q:"如果成片看起来很像 AI 做的怎么办？",
        a:"这正是两轮修改存在的意义——你在成片上指出不对的地方，我来修。判断标准不是“是不是 AI 生成”，而是“能不能用”。可以先看 Echo 7 与《遇见未来的自己》：它们在 MMEETT 大赛中拿下冠军与亚军，评审标准里就包含成片完成度。"},
       {q:"开始之前需要我提供什么？",
-       a:"一段话就够：影片用途、投放渠道、大致长度、截止日期，以及现有的品牌素材。如果片中要出现真实产品或人物，请一并附上清晰照片。收到后 24 小时内我会回覆可行方案、时间与报价。"}
+       a:"一段话就够：影片用途、投放渠道、大致长度、截止日期，以及现有的品牌素材。如果片中要出现真实产品或人物，请一并附上清晰照片。收到后 24 小时内我会回覆可行方案、时间与报价。"},
+      {q:"我想自己学，可以吗？",
+       a:"可以。我会不定期开办实体 AI 影片工作坊，带你在课堂上做出自己的第一支影片；也可以为企业团队安排内训。详情见上方「课堂」部分，或直接 WhatsApp 问我下一期的日期。"}
     ],
     place_1:"冠军", place_2:"亚军", cert_view:"查看获奖证书",
     wa_msg:"你好 Albert，我从你的网站看到你的作品，想预约一次线上会议讨论我们品牌的影片需求。",
@@ -767,7 +890,7 @@ const I18N = {
     mail_body:"你好 Albert，\n\n我从你的网站看到你的作品，想讨论一个影片项目。\n\n品牌／公司：\n影片用途：\n预计长度：\n期望交付时间：\n预算范围：\n\n期待你的回覆。"
   },
   en: {
-    nav_work:"Work", nav_process:"Process", nav_about:"About", nav_contact:"Contact",
+    nav_work:"Work", nav_process:"Process", nav_teach:"Teaching", nav_about:"About", nav_contact:"Contact",
     hero_badge:"1st & 2nd Place — MMEETT “Meet The Future” AI Film Competition",
     hero_h1:'Award-Winning <span class="grad">AI Video Production</span> for Global Brands',
     hero_sub:"From concept and photorealistic AI generation to custom music scoring and final edit. Full-scale video production at the speed of AI.",
@@ -788,10 +911,24 @@ const I18N = {
     step4_h:"Final Editorial & Polish", step4_p:"Pacing, grade and subtitles locked, then delivered in every aspect ratio each platform needs.",
     speed_big:"A 30–60s brand film, delivered in <em>5–7 days</em>.",
     speed_p:"No crew availability, no location fees, no cost to reshoot — revisions usually turn around same-day. Longer films, series work and high-complexity builds are scheduled to scope.",
+    teach_eyebrow:"Teaching",
+    teach_h2:"The same process,<br><em>taught in a room.</em>",
+    teach_lede:"Albert doesn't only make films for brands. He has broken the award-winning process into steps anyone can follow — and teaches it hands-on, in person, until every student has made their first AI film.",
+    tp1_h:"Leave with a finished film", tp1_p:"By the end of the workshop you have your own complete video — not just a page of notes.",
+    tp2_h:"Hands-on, not a lecture", tp2_p:"Bring a laptop or tablet. Albert works the room and fixes your shots with you, one by one.",
+    tp3_h:"Certificate of completion", tp3_p:"Every student who completes the workshop receives a certificate presented by Albert.",
+    next_label:"Next workshop", next_tba:"Dates to be announced", next_tba_sub:"Leave your number and you'll hear first when the next class opens.",
+    next_cta_wait:"Tell me when it opens", next_cta_open:"See the class details",
+    team_link:"In-house training: bring this to your team →",
+    stu_label:"Made by his students", stu_q:"Three students.<br>All three posted a finished film <em>within four days of class.</em>",
+    stu_day:"Posted day {n} after class",
+    wa_wait:"Hi Albert — I saw your AI video workshop on your website. Please let me know when the next class opens.",
+    wa_team:"Hi Albert — I'd like to find out about in-house AI video training for our team.",
     about_eyebrow:"About Albert",
     about_h2:"You deal with<br>the same person throughout.",
     about_p1:"I'm Albert. I produce commercial video for brands using AI — concept, generation, scoring and edit all handled by me. You're never handed off to a third-party team halfway through.",
     about_p2:"At the <strong>{comp}</strong> I entered two films and took <strong>1st and 2nd place</strong>. The concept films below run on that same process — and it is the process I will run on your brief: production-house quality, at a fraction of the time and budget.",
+    about_p3:"Alongside client work, I teach the same process — to business owners who want to make their own, and to in-house teams.",
     price_eyebrow:"Pricing", price_h2:"Every project is quoted individually.",
     price_lede:"Runtime, visual complexity and the number of delivered cuts vary with every brand — so there are no fixed packages. Send the brief, get an exact number.",
     price_inc_desc:"Every quote, whatever the scope, includes:",
@@ -804,10 +941,10 @@ const I18N = {
     final_lede:"One line on the film you need and you'll get a straight answer on approach, timeline and cost — or book a short call to talk it through.",
     final_cta1:"Chat on WhatsApp to Book a Call", final_cta2:"Email Your Brief",
     final_note:"Usually replies within 24 hours · Briefs accepted in English or 中文",
-    foot_tag:"AI Video Production", foot_mail:"Email",
+    foot_tag:"AI Video Production · Training", foot_mail:"Email",
     slot_label:"Video slot", slot_hint:"To be added",
     faq_eyebrow:"Questions", faq_h2:"Ownership, usage<em> and the fine print.</em>",
-    faq_lede:"The six things corporate clients ask before commissioning. If yours isn’t here, just ask.",
+    faq_lede:"What people ask most before working together. If yours isn’t here, just ask.",
     case_label:"Process in practice", case_note:"Working screenshots from recent productions. Different projects, four stages of one pipeline.",
     case_ph:"Still to come",
     faq:[
@@ -822,7 +959,9 @@ const I18N = {
       {q:"What if it comes out looking obviously AI-generated?",
        a:"That is what the two revision rounds are for — you flag what isn’t working on the delivered cut and it gets fixed. The bar is not ‘was this generated’ but ‘is this usable’. Echo 7 and Meeting Your Future Self are the evidence: they took 1st and 2nd at the MMEETT competition, judged on finished craft."},
       {q:"What do you need from us to start?",
-       a:"A paragraph. What the film is for, where it will run, rough runtime, your deadline, and any brand assets you have. If a real product or person features, clear photographs of both. You will have an approach, a timeline and a number back within 24 hours."}
+       a:"A paragraph. What the film is for, where it will run, rough runtime, your deadline, and any brand assets you have. If a real product or person features, clear photographs of both. You will have an approach, a timeline and a number back within 24 hours."},
+      {q:"Can I learn to do this myself?",
+       a:"Yes. I run in-person AI video workshops where you make your own first film in the room, and I also train in-house teams. See the Teaching section above, or message me on WhatsApp for the next date."}
     ],
     place_1:"1st Place", place_2:"2nd Place", cert_view:"View certificate",
     wa_msg:"Hi Albert — I found you through your website and I'd like to book an online meeting to discuss a video project for my brand.",
@@ -839,7 +978,7 @@ const t = k => I18N[lang][k] ?? '';
 const comp = () => CONFIG.competition[lang] + (CONFIG.competition.year ? ' ' + CONFIG.competition.year : '');
 const fill = s => s.replace('{comp}', comp());
 
-function waHref(){ return 'https://wa.me/' + CONFIG.whatsapp + '?text=' + encodeURIComponent(t('wa_msg')); }
+function waHref(msgKey){ return 'https://wa.me/' + CONFIG.whatsapp + '?text=' + encodeURIComponent(t(msgKey || 'wa_msg')); }
 function mailHref(){
   return 'mailto:' + CONFIG.email + '?subject=' + encodeURIComponent(t('mail_subject'))
        + '&body=' + encodeURIComponent(t('mail_body'));
@@ -971,6 +1110,62 @@ function filterWork(){
   });
 }
 
+/* ===== self-hosted video card (teaching section) ===== */
+function localVideoCard(v){
+  const el = document.createElement('div');
+  el.className = 'vid portrait nofilter';
+  el.innerHTML = '<img src="' + v.poster + '" alt="' + v.title[lang] + '" loading="lazy">'
+    + '<div class="play"><i>' + PLAY_SVG + '</i></div>';
+  el.addEventListener('click', () => {
+    const vid = document.createElement('video');
+    vid.src = v.src;
+    vid.poster = v.poster;
+    vid.controls = true;
+    vid.playsInline = true;
+    vid.autoplay = true;
+    el.innerHTML = '';
+    el.appendChild(vid);
+    vid.play().catch(() => {});
+  }, { once: true });
+  return el;
+}
+
+// Only one teaching video plays at a time.
+document.addEventListener('play', e => {
+  document.querySelectorAll('#teach video').forEach(v => { if (v !== e.target) v.pause(); });
+}, true);
+
+function renderTeaching(){
+  const tc = CONFIG.teaching;
+  if (!tc) return;
+
+  const reel = document.getElementById('teach-reel');
+  reel.innerHTML = '';
+  reel.appendChild(localVideoCard(tc.reel));
+
+  const open = tc.status === 'open' && tc.next && tc.next.url;
+  const nc = document.getElementById('next-class');
+  nc.innerHTML =
+    '<span class="label">' + t('next_label') + '</span>'
+    + '<div class="v">' + (open ? tc.next.date[lang] : t('next_tba')) + '</div>'
+    + '<p class="sub">' + (open ? tc.next.detail[lang] : t('next_tba_sub')) + '</p>'
+    + '<a class="btn btn-line" target="_blank" rel="noopener noreferrer" href="'
+      + (open ? tc.next.url : waHref('wa_wait')) + '">'
+      + t(open ? 'next_cta_open' : 'next_cta_wait') + '</a>'
+    + '<div><a class="team-link" target="_blank" rel="noopener noreferrer" href="' + waHref('wa_team') + '">'
+      + t('team_link') + '</a></div>';
+
+  const grid = document.getElementById('student-grid');
+  grid.innerHTML = '';
+  tc.students.forEach(st => {
+    const box = document.createElement('div');
+    box.className = 'work-item';
+    box.appendChild(localVideoCard(st));
+    box.appendChild(caption(st, t('stu_day').replace('{n}', st.day)));
+    grid.appendChild(box);
+  });
+}
+
 /* ===== case study ===== */
 function renderCase(){
   const box = document.getElementById('case');
@@ -1074,6 +1269,7 @@ function switchLang(l){
   renderTabs();
   renderWork();
   renderCase();
+  renderTeaching();
   renderFaq();
   try { localStorage.setItem('albert_lang', l); } catch(e) {}
 }
